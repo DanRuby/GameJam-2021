@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Ability Picker.unity
+    guid: adb7652305e69154ab48a24673e7d442
+  - enabled: 1
+    path: Assets/Scenes/Management Game.unity
+    guid: fe3f2fe2dad48ac4db37392d29d2255a
+  - enabled: 1
+    path: Assets/Scenes/Typing Minigame.unity
+    guid: 11bfa709b5e09174b87c4c062cf85d35
+  - enabled: 1
+    path: Assets/Scenes/Weights Lab.unity
+    guid: 7c35cb37ce924624ea34c06eef11048c
+  - enabled: 1
+    path: Assets/Scenes/Congratulations.unity
+    guid: 88adc21c08e159e448b5ee7578b36178
+  m_configObjects: {}
