@@ -9,50 +9,50 @@ public class ActivityButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     [SerializeField]
     private int id;
 
-    #region Поля эдитора
+    #region пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     [Header("Requirements")]
-    [Tooltip("Активность можно выполнить только раз в день")]
+    [Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ")]
     [SerializeField]
     private bool oncePerDay;
 
-    [Tooltip("Активность можно выполнить только в будни")]
+    [Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ")]
     [SerializeField]
     private bool weekdayOnly;
 
-    [Tooltip("Необходимо времени для выполнения")]
+    [Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
     [SerializeField]
     private int timeRequired;
 
-    [Tooltip("Необходимые статы для проведения активности")]
+    [Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
     [SerializeField]
     private PlayerStats requiredStats;
 
     [Space(4)]
     [Header("Benefits")]
-    [Tooltip("Восстанавливаемые параметры после проведения активности")]
+    [Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
     [SerializeField]
     private PlayerStats playerBenefits;
 
-    [Tooltip("Восстанавливаемые параметры после проведения активности")]
+    [Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
     [SerializeField]
     private LabStats labBenefits;
 
     [Space(4)]
     [Header("Random Benefits")]
-    [Tooltip("Восстанавливаемые параметры после проведения активности")]
+    [Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
     [SerializeField]
     private LabStats labBenefitsRandom;
 
-    [Tooltip("Восстанавливаемые параметры после проведения активности")]
+    [Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
     [SerializeField]
     private PlayerStats playerBenefitsRandom;
     #endregion
 
-    public static System.Action<Vector2, int,string> ActivityHoveredOver;
-    public static System.Action ActivityPointerExit;
-    public static System.Action<PlayerStats, LabStats> ActivityUsed;
+    public static event System.Action<Vector2, int,string> ActivityHoveredOver;
+    public static event System.Action ActivityPointerExit;
+    public static event System.Action<PlayerStats, LabStats> ActivityUsed;
 
-    /// Флаг, указывающий выполнялось ли активность в текущем дне
+    /// пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
     private bool activityWasUsed=false;
 
     private Button button;
@@ -60,7 +60,7 @@ public class ActivityButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     PlayerStats actualRequiredStats;
 
     /// <summary>
-    /// Метод перерасчета условий, чтобы понять активной ли должна быть кнопка
+    /// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     public void HandleEvents()
     {
@@ -102,7 +102,7 @@ public class ActivityButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     private void HandleFoodPoisoningDeactivated(float multyplier) => actualRequiredStats.Satiety += (int)(requiredStats.Satiety * multyplier);
 
     /// <summary>
-    /// Метод добавления условий для проверки активности кнопки
+    /// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     private void AddConditions()
     {
@@ -135,7 +135,7 @@ public class ActivityButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     }
 
     /// <summary>
-    /// Метод выполнения активности
+    /// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
    public void PerformActivity()
     {
@@ -164,7 +164,7 @@ public class ActivityButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         string requimentString = string.Empty;
         if (timeRequired > 0)
-            requimentString += $"{timeRequired} часов ";
+            requimentString += $"{timeRequired} пїЅпїЅпїЅпїЅпїЅ ";
         requimentString += actualRequiredStats.GetString();
         ActivityHoveredOver?.Invoke(eventData.position, id,requimentString);
     }

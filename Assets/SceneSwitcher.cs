@@ -9,7 +9,7 @@ public class SceneSwitcher : MonoBehaviour
     [SerializeField]
     private bool isDayChange;
 
-    public static System.Action DayFinished;
+    public static event System.Action DayFinished;
 
     public void ChangeScene()
     {

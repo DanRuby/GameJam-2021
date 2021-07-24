@@ -4,7 +4,7 @@ public class TabsButton : MonoBehaviour
 {
     private int index;
 
-    public static System.Action<int> TabButtonPressed;
+    public static event System.Action<int> TabButtonPressed;
 
     private void Awake()
     {

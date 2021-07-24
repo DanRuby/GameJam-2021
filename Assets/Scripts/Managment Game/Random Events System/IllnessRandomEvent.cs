@@ -1,5 +1,5 @@
 /// <summary>
-/// Случайное событие - "Заболевание" 
+/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ - "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" 
 /// </summary>
 public class IllnessRandomEvent : BaseRandomEvent
 {
@@ -12,9 +12,10 @@ public class IllnessRandomEvent : BaseRandomEvent
     private int MONEY_SPENT = 500;
     private const float ENERGY_CHANGE = .25F;
 
-    public static System.Action<float> IllnesEventFired;
-    public static System.Action<float> IllnesEventEnded;
-    public void Activate()
+    public static event System.Action<float> IllnesEventFired;
+    public static event System.Action<float> IllnesEventEnded;
+    
+    public override void Activate()
     {
         base.Activate();
         Player.CurrentMoney -= MONEY_SPENT;

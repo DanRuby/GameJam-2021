@@ -1,22 +1,22 @@
 using UnityEngine;
 
 /// <summary>
-/// Менеджер случайных событий
+/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 /// </summary>
 public class RandomEventsManager : MonoBehaviour
 {
     /// <summary>
-    /// Список случайных событий
+    /// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     private readonly BaseRandomEvent[] events= {new MaterialAidRandomEvent(), new IllnessRandomEvent() , new HappyDayRandomEvent(), new FoodPoisoningRandomEvent(), 
                                                     new BreakUpRandomEvent(), new CockRoachesRandomEvent(), new FireTrainingRandomEvent() };
 
     /// <summary>
-    /// Текущее событие
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     private BaseRandomEvent pickedEvent=null;
 
-    public static System.Action<int> RandomEventTriggered;
+    public static event System.Action<int> RandomEventTriggered;
 
     public void Tick()
     {

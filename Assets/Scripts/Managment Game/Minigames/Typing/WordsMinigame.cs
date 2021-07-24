@@ -2,12 +2,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Миниигра на напечатывание слов
+/// РњРёРЅРёРёРіСЂР° РЅР° РЅР°РїРµС‡Р°С‚С‹РІР°РЅРёРµ СЃР»РѕРІ
 /// </summary>
 public class WordsMinigame : MiniGameManager
 {
     [SerializeField]
-    [Tooltip("Префаб для спауна")]
+    [Tooltip("РџСЂРµС„Р°Р± РґР»СЏ СЃРїР°СѓРЅР°")]
     private WordDisplayer wordPrefab;
 
     private string[] wordTextsPool = { "int","bool","string", "float", "double", "short", "byte", "MonoBehaviour", "UnityEngine", "using", "Input", "Update", "Start", "Awake", "delegate", "Action", "event",
@@ -76,7 +76,7 @@ public class WordsMinigame : MiniGameManager
     }
 
     /// <summary>
-    /// Хендлинг уничтожения слова
+    /// РҐРµРЅРґР»РёРЅРі СѓРЅРёС‡С‚РѕР¶РµРЅРёСЏ СЃР»РѕРІР°
     /// </summary>
     /// <param name="wordDisplayer"></param>
     private void OnWordDestroyed(WordDisplayer wordDisplayer)

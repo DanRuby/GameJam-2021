@@ -1,9 +1,9 @@
 using UnityEngine;
 
 /// <summary>
-/// Базовый класс для менеджеров миниигр
+/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 /// </summary>
 public class MiniGameManager : MonoBehaviour
 {
-    public static System.Action<float> MiniGameEnded;
+    public static  System.Action<float> MiniGameEnded;
 }

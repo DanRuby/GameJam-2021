@@ -1,5 +1,5 @@
 /// <summary>
-/// Случайное событие - "Пищевое отравление" 
+/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ - "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" 
 /// </summary>
 public class FoodPoisoningRandomEvent : BaseRandomEvent
 {
@@ -12,8 +12,8 @@ public class FoodPoisoningRandomEvent : BaseRandomEvent
     private const float SATIETY_CHANGE = .25f;
     private const int MONEY = 500;
     
-    public static System.Action<float> FoodPoisoningEventFired;
-    public static System.Action<float> FoodPoisoningEventEnded;
+    public static event System.Action<float> FoodPoisoningEventFired;
+    public static event System.Action<float> FoodPoisoningEventEnded;
     public override void Activate()
     {
         base.Activate();

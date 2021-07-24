@@ -3,7 +3,7 @@ using System;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// Месяца года
+/// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 /// </summary>
 public enum Month
 {
@@ -20,11 +20,11 @@ public enum Day
 [RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(TeacherPicker))]
 /// <summary>
-/// Класс для управления неделей. Включает в себя раздачу номеров дней и хранит ежедневные приросты характеристик.
+/// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
 /// </summary>
 public class Week : MonoBehaviour
 {
-    #region Константы
+    #region пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private const int HOURS_PER_DAY = 24;
     private  int MAX_ENERGY_REFILL = 35;
     private  int HOURS_TO_ENERGY_MULTIPLIER = 5;
@@ -34,13 +34,13 @@ public class Week : MonoBehaviour
 
 
     /// <summary>
-    /// Массив количества дней в месяцах
+    /// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     public static readonly int[] DaysInMonth = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
     #endregion
 
     /// <summary>
-    /// Дата текущего дня
+    /// пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
     /// </summary>
     public static int CurrentDayDate
     {
@@ -65,12 +65,12 @@ public class Week : MonoBehaviour
     private static int currentDayDate = 1;
 
     /// <summary>
-    /// Текущий день
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     /// </summary>
     public static Day currentDay = Day.Sunday;
 
     /// <summary>
-    /// Часов осталось в дне
+    /// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ
     /// </summary>
     public static int HoursLeft
     {
@@ -87,16 +87,16 @@ public class Week : MonoBehaviour
     private static int hoursLeft = HOURS_PER_DAY;
 
     /// <summary>
-    /// Текущий месяц
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     public static Month currentMonth = Month.September;
 
-    public static Action DefenseDay;
+    public static event Action DefenseDay;
 
     public static Teacher CurrentTeacher { get; private set; }
 
-    public static Action HoursLeftChanged;
-    public static Action DayChanged;
+    public static event Action HoursLeftChanged;
+    public static event Action DayChanged;
 
     private TeacherPicker teacherPicker;
     private RandomEventsManager eventsManager;

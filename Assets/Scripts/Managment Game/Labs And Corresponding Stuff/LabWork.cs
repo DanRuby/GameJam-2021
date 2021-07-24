@@ -7,11 +7,11 @@ public enum Department
 
 public static class LabWork
 {
-    #region Статы
+    #region пїЅпїЅпїЅпїЅпїЅ
     public const int MAX_STATS_VALUE=100;
 
     /// <summary>
-    /// Оригинальность
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     public static int Originality
     {
@@ -25,7 +25,7 @@ public static class LabWork
     private static int originality=0;
 
     /// <summary>
-    /// Завершенность
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     public static int Complitness
      {
@@ -39,7 +39,7 @@ public static class LabWork
     private static int complitness=0;
 
     /// <summary>
-    /// Правильность
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     public static int Correctness
     {
@@ -53,10 +53,10 @@ public static class LabWork
     private static int correctness=0;
     #endregion
 
-    #region События об изменениях статов
-    public static Action<int> OriginalityValueChanged;
-    public static Action<int> ComplitnessValueChanged;
-    public static Action<int> CorrectnessValueChanged;
+    #region пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+    public static event Action<int> OriginalityValueChanged;
+    public static event Action<int> ComplitnessValueChanged;
+    public static event Action<int> CorrectnessValueChanged;
     #endregion
 
     public static void ChangeValues(LabStats changes)

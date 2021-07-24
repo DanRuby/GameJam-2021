@@ -1,20 +1,20 @@
 using UnityEngine;
 
 /// <summary>
-/// Таймер
+/// пїЅпїЅпїЅпїЅпїЅпїЅ
 /// </summary>
 public class Timer 
 {
     private float timer;
     private int secondsLeft = 0;
     private int prevSecondsLeft = 0;
-    public static System.Action TimerRanOut;
-    public static System.Action<int> TimerValueChanged;
+    public static event System.Action TimerRanOut;
+    public static event System.Action<int> TimerValueChanged;
 
     public Timer(int seconds) => timer = seconds;
     
     /// <summary>
-    /// Тик таймера 
+    /// пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ 
     /// </summary>
     public void Tick()
     {

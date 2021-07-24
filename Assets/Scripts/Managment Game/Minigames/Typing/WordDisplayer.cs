@@ -3,7 +3,7 @@ using TMPro;
 using System;
 
 /// <summary>
-/// Класс, выводящий слова на канвас 
+/// пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ 
 /// </summary>
 public class WordDisplayer : MonoBehaviour
 {
@@ -15,12 +15,12 @@ public class WordDisplayer : MonoBehaviour
     private const float moveSpeed = 50.0f;
     private const float destroyCoordinate = 0;
 
-    public static Action<WordDisplayer> WordDestroyed;
+    public static event Action<WordDisplayer> WordDestroyed;
 
     public int LettersLeft => textMesh.text.Length;
 
     /// <summary>
-    /// Установка нового слова
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     /// <param name="text"></param>
     public void SetNewText(string text)
@@ -32,7 +32,7 @@ public class WordDisplayer : MonoBehaviour
     public void ChangeColorToActive() => textMesh.color = ACTIVE_COLOR;
 
     /// <summary>
-    /// Хендлинг инпутов от клавиатуры
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     /// <param name="letter"></param>
     public void HandleInput(char letter)
