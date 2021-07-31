@@ -6,6 +6,9 @@ public enum Upgrade
     Floppa, Matrace, Monitor, Gym
 }
 
+/// <summary>
+/// Класс получения апгрейдов 
+/// </summary>
 [RequireComponent(typeof(Button))]
 public class UpgradeActivator : MonoBehaviour
 {
@@ -14,9 +17,10 @@ public class UpgradeActivator : MonoBehaviour
 
     [SerializeField]
     private int moneyNedded;
+    
     Button button;
 
-    public static bool[] ActiveUpgrades = new bool[4];
+    public static readonly bool[] ActiveUpgrades = new bool[4];
 
     void Awake()
     {

@@ -1,5 +1,5 @@
 /// <summary>
-/// Структура, хранящая статы лабораторной
+/// РЎС‚СЂСѓРєС‚СѓСЂР°, С…СЂР°РЅСЏС‰Р°СЏ СЃС‚Р°С‚С‹ Р»Р°Р±РѕСЂР°С‚РѕСЂРЅРѕР№
 /// </summary>
 [System.Serializable]
 public struct LabStats
@@ -15,9 +15,11 @@ public struct LabStats
         Correctness = correctness;
     }
 
-    public static LabStats operator *(LabStats a, float value) => new LabStats((int)(a.Originality * value), (int)(a.Complitness * value), (int)(a.Correctness * value));
+    public static LabStats operator *(LabStats a, float value) => new LabStats((int)(a.Originality * value), 
+        (int)(a.Complitness * value), (int)(a.Correctness * value));
 
-    public static LabStats operator +(LabStats a, LabStats b) => new LabStats(a.Originality + b.Originality, a.Complitness + b.Complitness, a.Correctness + b.Complitness);
+    public static LabStats operator +(LabStats a, LabStats b) => new LabStats(a.Originality + b.Originality, 
+        a.Complitness + b.Complitness, a.Correctness + b.Complitness);
 
     public bool HasValues() => Originality != 0 || Complitness != 0 || Correctness != 0;
 
@@ -25,11 +27,11 @@ public struct LabStats
     {
         string res = string.Empty;
         if (Originality != 0)
-            res += $"{Originality} оригинальности ";
+            res += $"{Originality} РѕСЂРёРіРёРЅР°Р»СЊРЅРѕСЃС‚Рё ";
         if (Complitness != 0)
-            res += $"{Complitness} завершенности ";
+            res += $"{Complitness} Р·Р°РІРµСЂС€РµРЅРЅРѕСЃС‚Рё ";
         if (Correctness != 0)
-            res += $"{Correctness} правильности";
+            res += $"{Correctness} РїСЂР°РІРёР»СЊРЅРѕСЃС‚Рё";
         return res;
     }
 }

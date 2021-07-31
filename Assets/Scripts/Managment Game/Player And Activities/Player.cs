@@ -1,18 +1,18 @@
 using System;
 
 /// <summary>
-/// ���������� ������
+/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 /// </summary>
 public static class Player 
 {
-    /*��������� �������� ����*/
+    /*пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ*/
     private const int START_MONEY = 1500;
     private const int DEBUFF_SATIETY_MULTYPLIER=2;
 
-    #region �����
+    #region пїЅпїЅпїЅпїЅпїЅ
 
     /// <summary>
-    /// ������� ������
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     public static int CurrentMoney 
     {
@@ -29,7 +29,7 @@ public static class Player
     private static int currentMoney=START_MONEY;
 
     /// <summary>
-    /// ������� ��������
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     public static int CurrentSatiety 
     {
@@ -46,7 +46,7 @@ public static class Player
     private static int currentSatiety=50;
 
     /// <summary>
-    /// ������� �������
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     public static int CurrentEnergy
     {
@@ -63,7 +63,7 @@ public static class Player
     private static int currentEnergy = 50;
 
     /// <summary>
-    /// ����������� ��������� �������� ��������
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     public static int MaxSatiety
     { 
@@ -80,12 +80,12 @@ public static class Player
     private static int maxSatiety = 100;
 
     /// <summary>
-    /// ��������, ���� �������� ������� ����������������� �� ��� ����������
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     public const int DebuffSatietyValue=30;
 
     /// <summary>
-    /// ����������� ��������� �������� �������
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     public static int MaxEnergy
     {
@@ -102,7 +102,7 @@ public static class Player
     private static int maxEnergy = 100;
     #endregion
 
-    #region ������� ��������� ������
+    #region пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     public static event Action MoneyValueChanged;
     public static event Action SatietyValueChanged;
     public static event Action EnergyValueChanged;

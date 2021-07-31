@@ -4,50 +4,50 @@ using TMPro;
 public class MainFieldsUIController : MonoBehaviour
 {
 
-    [Tooltip("Ссылки на всплывающие панели")]
+    [Tooltip("РЎСЃС‹Р»РєРё РЅР° РІСЃРїР»С‹РІР°СЋС‰РёРµ РїР°РЅРµР»Рё")]
     [SerializeField]
     private GameObject[] UIPanels;
 
 
-    #region Текстовые поля
-    [Header("Поля статов игрока")]
-    [Tooltip("Меш для вывода денег")]
+    #region РўРµРєСЃС‚РѕРІС‹Рµ РїРѕР»СЏ
+    [Header("РџРѕР»СЏ СЃС‚Р°С‚РѕРІ РёРіСЂРѕРєР°")]
+    [Tooltip("РњРµС€ РґР»СЏ РІС‹РІРѕРґР° РґРµРЅРµРі")]
     [SerializeField]
     private TextMeshProUGUI moneyTMP;
 
-    [Tooltip("Меш для вывода энергии")]
+    [Tooltip("РњРµС€ РґР»СЏ РІС‹РІРѕРґР° СЌРЅРµСЂРіРёРё")]
     [SerializeField]
     private TextMeshProUGUI energyTMP;
 
-    [Tooltip("Меш для вывода сытости")]
+    [Tooltip("РњРµС€ РґР»СЏ РІС‹РІРѕРґР° СЃС‹С‚РѕСЃС‚Рё")]
     [SerializeField]
     private TextMeshProUGUI satietyTMP;
 
 
-    [Header("Полядля вывода дня")]
-    [Tooltip("Меш для вывода оставшегося времени")]
+    [Header("РџРѕР»СЏРґР»СЏ РІС‹РІРѕРґР° РґРЅСЏ")]
+    [Tooltip("РњРµС€ РґР»СЏ РІС‹РІРѕРґР° РѕСЃС‚Р°РІС€РµРіРѕСЃСЏ РІСЂРµРјРµРЅРё")]
     [SerializeField]
     private TextMeshProUGUI hoursTMP;
 
-    [Tooltip("Меш для вывода оставшихся дней для снятия лабы")]
+    [Tooltip("РњРµС€ РґР»СЏ РІС‹РІРѕРґР° РѕСЃС‚Р°РІС€РёС…СЃСЏ РґРЅРµР№ РґР»СЏ СЃРЅСЏС‚РёСЏ Р»Р°Р±С‹")]
     [SerializeField]
     private TextMeshProUGUI newLabDaysTMP;
 
-    [Tooltip("Меш для вывода текущего месяца")]
+    [Tooltip("РњРµС€ РґР»СЏ РІС‹РІРѕРґР° С‚РµРєСѓС‰РµРіРѕ РјРµСЃСЏС†Р°")]
     [SerializeField]
     private TextMeshProUGUI currentMonthTMP;
 
-    [Tooltip("Меш для вывода оставшеихся дня для защиты лабы")]
+    [Tooltip("РњРµС€ РґР»СЏ РІС‹РІРѕРґР° РѕСЃС‚Р°РІС€РµРёС…СЃСЏ РґРЅСЏ РґР»СЏ Р·Р°С‰РёС‚С‹ Р»Р°Р±С‹")]
     [SerializeField]
     private TextMeshProUGUI LabFinDaysTMP;
 
-    [Tooltip("Меш для вывода текущего дня")]
+    [Tooltip("РњРµС€ РґР»СЏ РІС‹РІРѕРґР° С‚РµРєСѓС‰РµРіРѕ РґРЅСЏ")]
     [SerializeField]
     private TextMeshProUGUI DayTMP;
 
     #endregion
 
-    #region Обработка событий
+    #region РћР±СЂР°Р±РѕС‚РєР° СЃРѕР±С‹С‚РёР№
     private void ChangeEnergyText() => energyTMP.text = $"{Player.CurrentEnergy}/{Player.MaxEnergy}";
 
     private void ChangeMoneyText() => moneyTMP.text = $"{Player.CurrentMoney}";
@@ -60,18 +60,18 @@ public class MainFieldsUIController : MonoBehaviour
         else satietyTMP.color = Color.black;
     }
 
-    private void ChangeTimeText() => hoursTMP.text = $"Часов осталось: {Week.HoursLeft}";
+    private void ChangeTimeText() => hoursTMP.text = $"Р§Р°СЃРѕРІ РѕСЃС‚Р°Р»РѕСЃСЊ: {Week.HoursLeft}";
 
     private void ChangeDayText()
     {
         currentMonthTMP.text = Week.currentMonth.ToRussianString();
-        DayTMP.text = $"{Week.currentDay.ToRussianString()} - {Week.CurrentDayDate} число";
-        newLabDaysTMP.text = $"Дней до снятия лабы: {Week.currentDay.DaysBefore(Week.NEW_LAB_DAY)}";
-        LabFinDaysTMP.text = $"Дней до защиты лабы: {Week.currentDay.DaysBefore(Week.LAB_FIN_DAY)}";
+        DayTMP.text = $"{Week.currentDay.ToRussianString()} - {Week.CurrentDayDate} С‡РёСЃР»Рѕ";
+        newLabDaysTMP.text = $"Р”РЅРµР№ РґРѕ СЃРЅСЏС‚РёСЏ Р»Р°Р±С‹: {Week.currentDay.DaysBefore(Week.NEW_LAB_DAY)}";
+        LabFinDaysTMP.text = $"Р”РЅРµР№ РґРѕ Р·Р°С‰РёС‚С‹ Р»Р°Р±С‹: {Week.currentDay.DaysBefore(Week.LAB_DEFENCE_DAY)}";
     }
 
     /// <summary>
-    /// Отписка от событий игры
+    /// РћС‚РїРёСЃРєР° РѕС‚ СЃРѕР±С‹С‚РёР№ РёРіСЂС‹
     /// </summary>
     private void UnsubscribeFromEvents()
     {
@@ -86,7 +86,7 @@ public class MainFieldsUIController : MonoBehaviour
     }
 
     /// <summary>
-    /// Подписка на события игры
+    /// РџРѕРґРїРёСЃРєР° РЅР° СЃРѕР±С‹С‚РёСЏ РёРіСЂС‹
     /// </summary>
     private void SubscribeToEvents()
     {
@@ -122,7 +122,7 @@ public class MainFieldsUIController : MonoBehaviour
 
 
     /// <summary>
-    /// Метод для переключения активности необходимого канваса
+    /// РњРµС‚РѕРґ РґР»СЏ РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ Р°РєС‚РёРІРЅРѕСЃС‚Рё РЅРµРѕР±С…РѕРґРёРјРѕРіРѕ РєР°РЅРІР°СЃР°
     /// </summary>
     /// <param name="index"></param>
     private void ToggleUIPanelActive(int index)
@@ -134,7 +134,7 @@ public class MainFieldsUIController : MonoBehaviour
     }
 
     /// <summary>
-    /// Метод отключения канвасов активностей
+    /// РњРµС‚РѕРґ РѕС‚РєР»СЋС‡РµРЅРёСЏ РєР°РЅРІР°СЃРѕРІ Р°РєС‚РёРІРЅРѕСЃС‚РµР№
     /// </summary>
     private void SetPanelsInactive()
     {

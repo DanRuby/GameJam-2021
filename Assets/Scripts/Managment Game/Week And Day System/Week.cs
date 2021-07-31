@@ -3,7 +3,7 @@ using System;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// ������ ����
+/// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 /// </summary>
 public enum Month
 {
@@ -20,27 +20,27 @@ public enum Day
 [RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(TeacherPicker))]
 /// <summary>
-/// ����� ��� ���������� �������. �������� � ���� ������� ������� ���� � ������ ���������� �������� �������������.
+/// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
 /// </summary>
 public class Week : MonoBehaviour
 {
-    #region ���������
+    #region пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private const int HOURS_PER_DAY = 24;
     private  int MAX_ENERGY_REFILL = 35;
     private  int HOURS_TO_ENERGY_MULTIPLIER = 5;
 
     public const Day NEW_LAB_DAY = Day.Monday;
-    public const Day LAB_FIN_DAY = Day.Saturday;
+    public const Day LAB_DEFENCE_DAY = Day.Saturday;
 
 
     /// <summary>
-    /// ������ ���������� ���� � �������
+    /// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     public static readonly int[] DaysInMonth = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
     #endregion
 
     /// <summary>
-    /// ���� �������� ���
+    /// пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
     /// </summary>
     public static int CurrentDayDate
     {
@@ -65,12 +65,12 @@ public class Week : MonoBehaviour
     private static int currentDayDate = 1;
 
     /// <summary>
-    /// ������� ����
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     /// </summary>
     public static Day currentDay = Day.Sunday;
 
     /// <summary>
-    /// ����� �������� � ���
+    /// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ
     /// </summary>
     public static int HoursLeft
     {
@@ -87,7 +87,7 @@ public class Week : MonoBehaviour
     private static int hoursLeft = HOURS_PER_DAY;
 
     /// <summary>
-    /// ������� �����
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     public static Month currentMonth = Month.September;
 
@@ -114,23 +114,20 @@ public class Week : MonoBehaviour
 
     private void OnDestroy() => SceneSwitcher.DayFinished -= GoToNextDay;
 
+    /// <summary>
+    /// РњРµС‚РѕРґ РґР»СЏ РїРµСЂРµС…РѕРґР° РІ СЃР»РµРґСѓСЋС‰РёР№ РґРµРЅСЊ
+    /// </summary>
     public void GoToNextDay()
     {
         CurrentDayDate++;
         DayChanged?.Invoke();
 
-        if (UpgradeActivator.ActiveUpgrades[(int)Upgrade.Matrace])
-        {
-            MAX_ENERGY_REFILL = 50;
-            HOURS_TO_ENERGY_MULTIPLIER = 7;
-        }
-        Player.CurrentEnergy += Mathf.Min(MAX_ENERGY_REFILL, HoursLeft * HOURS_TO_ENERGY_MULTIPLIER);
-        
+        CalculateSleepEnergy();
 
         HoursLeft = HOURS_PER_DAY;
 
+        
         eventsManager.DeactivateCurrentEvent();
-
         if (currentDay == NEW_LAB_DAY)
         {
             CurrentTeacher = teacherPicker.PickNewTeacher();
@@ -142,13 +139,20 @@ public class Week : MonoBehaviour
             }
             else SceneManager.LoadScene("Congratulations");
         }
-        else if (currentDay == LAB_FIN_DAY)
-        {
+        else if (currentDay == LAB_DEFENCE_DAY)
             DefenseDay?.Invoke();
-        }
         else
             eventsManager.Tick();
     }
 
+    private void CalculateSleepEnergy()
+    {
+        if (UpgradeActivator.ActiveUpgrades[(int) Upgrade.Matrace])
+        {
+            MAX_ENERGY_REFILL = 50;
+            HOURS_TO_ENERGY_MULTIPLIER = 7;
+        }
 
+        Player.CurrentEnergy += Mathf.Min(MAX_ENERGY_REFILL, HoursLeft * HOURS_TO_ENERGY_MULTIPLIER);
+    }
 }

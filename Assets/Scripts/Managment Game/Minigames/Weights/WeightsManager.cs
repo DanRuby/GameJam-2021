@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 
 /// <summary>
-/// �������� �� ���������� ����
+/// Миниигра по указыванию веса
 /// </summary>
 public class WeightsManager : MiniGameManager
 {
@@ -55,16 +55,19 @@ public class WeightsManager : MiniGameManager
 
     private void Update() => timer.Tick();
 
+    //Добавить измерени игрока в массив 
     public void AddPlayerMeasurement(string grammsString)
     {
         try
         {           
             playerValues[currentMeasurement] = System.Convert.ToInt32(grammsString);
+            
             currentMeasurement++;
             if (currentMeasurement == numMeasurements)
                 CalculateResults();
             else if(currentMeasurement<numMeasurements)
             {
+                //Установить новое измерение
                 needle.SetNewWeight(correctValues[currentMeasurement]);
                 inputField.Select();
                 inputField.ActivateInputField();
@@ -73,15 +76,18 @@ public class WeightsManager : MiniGameManager
         }
         catch (System.FormatException)
         {
-            Debug.Log("������ ������� �� �� ����");
+            Debug.Log("Строка состоит не из цифр");
         }
     }
-
+    
     public void CalculateResults()
     {
         float result = 0;
         float maxResPerMeasurment = 1.0f / numMeasurements;
-
+        
+        /*Результат считается как сумма( (100% - процентная ошибка от измерения) * 1/кол-во измерений )
+         * Результат получается в виде числа от 0 до 1
+         */
         for (int i = 0; i < numMeasurements; i++)
         {
             float perc = (float)correctValues[i] / 100;

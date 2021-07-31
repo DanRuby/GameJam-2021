@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -149,9 +149,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 214988495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3835a3490608034abb294825b412cb1, type: 3}
+  m_Script: {fileID: 11500000, guid: 881438bacf94fc348b5562a440c9f30a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: Management Game
+  isDayChange: 0
 --- !u!4 &214988497
 Transform:
   m_ObjectHideFlags: 0
@@ -892,8 +894,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 214988496}
-        m_TargetAssemblyTypeName: AbilityPicker, Assembly-CSharp
-        m_MethodName: Continue
+        m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
+        m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

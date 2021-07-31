@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 
 /// <summary>
-/// Попап результата проведенной активности
+/// РџРѕРїР°Рї СЂРµР·СѓР»СЊС‚Р°С‚Р° РїСЂРѕРІРµРґРµРЅРЅРѕР№ Р°РєС‚РёРІРЅРѕСЃС‚Рё
 /// </summary>
 public class ActivityUsedPopUp : MonoBehaviour
 {
@@ -24,7 +24,7 @@ public class ActivityUsedPopUp : MonoBehaviour
         if (timeElapsed >= disappearTime)
         {
             gameObject.SetActive(false);
-            this.enabled = false;
+            enabled = false;
         }
     }
 
@@ -32,10 +32,10 @@ public class ActivityUsedPopUp : MonoBehaviour
 
     private void ShowPopUp(PlayerStats playerStats, LabStats labStats)
     {
-        textMesh.text = $"Было восстановлено\n{playerStats.Energy} энергии, {playerStats.Satiety} сытости, {playerStats.Money} денег,\n" +
-            $"{labStats.Complitness} законченности, {labStats.Correctness} правильности, {labStats.Originality} оригинальности";
+        textMesh.text = $"Р‘С‹Р»Рѕ РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРѕ\n{playerStats.Energy} СЌРЅРµСЂРіРёРё, {playerStats.Satiety} СЃС‹С‚РѕСЃС‚Рё, {playerStats.Money} РґРµРЅРµРі,\n" +
+            $"{labStats.Complitness} Р·Р°РєРѕРЅС‡РµРЅРЅРѕСЃС‚Рё, {labStats.Correctness} РїСЂР°РІРёР»СЊРЅРѕСЃС‚Рё, {labStats.Originality} РѕСЂРёРіРёРЅР°Р»СЊРЅРѕСЃС‚Рё";
         gameObject.SetActive(true);
         timeElapsed = 0;
-        this.enabled = true;
+        enabled = true;
     }
 }

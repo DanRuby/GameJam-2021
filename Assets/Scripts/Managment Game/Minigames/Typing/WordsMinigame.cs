@@ -2,12 +2,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Миниигра на напечатывание слов
+/// РњРёРЅРёРёРіСЂР° РЅР° РЅР°РїРµС‡Р°С‚С‹РІР°РЅРёРµ СЃР»РѕРІ
 /// </summary>
 public class WordsMinigame : MiniGameManager
 {
     [SerializeField]
-    [Tooltip("Префаб для спауна")]
+    [Tooltip("РџСЂРµС„Р°Р± РґР»СЏ СЃРїР°СѓРЅР°")]
     private WordDisplayer wordPrefab;
 
     private string[] wordTextsPool = { "int","bool","string", "float", "double", "short", "byte", "MonoBehaviour", "UnityEngine", "using", "Input", "Update", "Start", "Awake", "delegate", "Action", "event",
@@ -42,6 +42,7 @@ public class WordsMinigame : MiniGameManager
     }
     private void OnDestroy() => WordDisplayer.WordDestroyed -= OnWordDestroyed;
 
+    //РЎРѕР·РґР°С‚СЊ РЅРѕРІРѕРµ СЃР»РѕРІРѕ
     private void SpawnNewWord()
     {
         numOfWordsSpawned++;
@@ -61,13 +62,20 @@ public class WordsMinigame : MiniGameManager
     private void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= timeBetweenSpawns && 
-            numOfWordsSpawned < maxNumOfWords)
+        
+        if (timer >= timeBetweenSpawns && numOfWordsSpawned < maxNumOfWords)
         {
             SpawnNewWord();
             timer = 0;
         }
 
+        HandleKeyboardInput();
+    }
+
+    
+    private void HandleKeyboardInput()
+    {
+        // РџРµСЂРµРґР°РІР°С‚СЊ РІРІРµРґРµРЅРЅСѓСЋ СЃС‚СЂРѕРєСѓ Р°РєС‚РёРІРЅРѕРјСѓ СЃР»РѕРІСѓ
         foreach (char letter in Input.inputString)
         {
             if (activeInputWord)
@@ -76,14 +84,15 @@ public class WordsMinigame : MiniGameManager
     }
 
     /// <summary>
-    /// Хендлинг уничтожения слова
+    /// РҐРµРЅРґР»РёРЅРі СѓРЅРёС‡С‚РѕР¶РµРЅРёСЏ СЃР»РѕРІР°
     /// </summary>
     /// <param name="wordDisplayer"></param>
     private void OnWordDestroyed(WordDisplayer wordDisplayer)
     {
         wordDisplayer.gameObject.SetActive(false);
-
         spawnedWords.Remove(wordDisplayer);
+        
+        //Р•СЃР»Рё РЅР° СЌРєСЂР°РЅРµ РµСЃС‚СЊ СЃР»РѕРІР°, С‚Рѕ РІС‹Р±СЂСЏС‚СЊ РЅР°РёР±РѕР»РµРµ СЃС‚Р°СЂРѕРµ Р°РєС‚РёРІРЅС‹Рј
         if (spawnedWords.Count != 0)
         {
             activeInputWord = spawnedWords[0];
@@ -95,6 +104,7 @@ public class WordsMinigame : MiniGameManager
             score += ScorePerWord;
         wordsPool.ReturnObject(wordDisplayer);
 
+        //Р•СЃР»Рё СѓРЅРёС‡С‚РѕР¶РµРЅРЅРѕРµ СЃР»РѕРІРѕ Р±С‹Р»Рѕ РїРѕСЃР»РµРґРЅРёРј РґР»СЏ СЃРїР°СѓРЅР°, С‚Рѕ Р·Р°РІРµСЂС€РёС‚СЊ РёРіСЂСѓ
         if (numOfWordsSpawned == maxNumOfWords && spawnedWords.Count == 0)
             MiniGameEnded?.Invoke((float)score/maxScore);
     }

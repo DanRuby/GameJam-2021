@@ -1,37 +1,39 @@
 using UnityEngine;
 
 /// <summary>
-/// Основная информация о преподавателе
+/// РћСЃРЅРѕРІРЅР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїСЂРµРїРѕРґР°РІР°С‚РµР»Рµ
 /// </summary>
 [CreateAssetMenu(fileName = "Teacher", menuName = "Scriptable Object/Teacher")]
 public class Teacher : ScriptableObject
 {
     /// <summary>
-    /// ФИО
+    /// Р¤РРћ
     /// </summary>
     public string FIO;
 
     /// <summary>
-    /// Кафедра
+    /// РљР°С„РµРґСЂР°
     /// </summary>
     public Department Department;
 
     /// <summary>
-    /// Требования
+    /// РўСЂРµР±РѕРІР°РЅРёСЏ
     /// </summary>
     public LabStats Requirements;
 
     /// <summary>
-    /// Фотография
+    /// Р¤РѕС‚РѕРіСЂР°С„РёСЏ
     /// </summary>
     public Sprite Photo;
 
     /// <summary>
-    /// Название сцены с миниигрой
+    /// РќР°Р·РІР°РЅРёРµ СЃС†РµРЅС‹ СЃ РјРёРЅРёРёРіСЂРѕР№
     /// </summary>
     public string SceneName;
 
+    
     [Range(0,1)]
+    [Tooltip(("РЁР°РЅСЃ РїСЂРµРїРѕРґР°РІР°С‚РµР»СЏ РїРѕРІС‹СЃРёС‚СЊ РѕС†РµРЅРєСѓ. Р§РµРј Р±Р»РёР¶Рµ Рє 1, С‚РµРј Р±РѕР»СЊС€Рµ С€Р°РЅСЃ."))]
     public float Loyality;
 
     public AudioClip audio;

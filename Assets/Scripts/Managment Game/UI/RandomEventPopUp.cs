@@ -4,7 +4,7 @@ using System.Text;
 using TMPro;
 
 /// <summary>
-/// Попап случайного события
+/// РџРѕРїР°Рї СЃР»СѓС‡Р°Р№РЅРѕРіРѕ СЃРѕР±С‹С‚РёСЏ
 /// </summary>
 public class RandomEventPopUp : MonoBehaviour
 {
@@ -14,6 +14,8 @@ public class RandomEventPopUp : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI randomEventDescription;
 
+    #region Json
+
     [System.Serializable]
     class EventDescriptionArgs
     {
@@ -22,6 +24,9 @@ public class RandomEventPopUp : MonoBehaviour
     }
 
     Wrapper<EventDescriptionArgs> eventDescriptions;
+    
+
+    #endregion
 
     private void Awake()
     {

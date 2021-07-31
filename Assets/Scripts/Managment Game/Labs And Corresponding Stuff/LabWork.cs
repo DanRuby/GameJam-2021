@@ -5,13 +5,16 @@ public enum Department
     VT, SAPR, Physics, IS 
 }
 
+/// <summary>
+/// ????? ???????????? ??????
+/// </summary>
 public static class LabWork
 {
-    #region �����
+    #region Stats
     public const int MAX_STATS_VALUE=100;
 
     /// <summary>
-    /// ��������������
+    /// ??????????????
     /// </summary>
     public static int Originality
     {
@@ -25,7 +28,7 @@ public static class LabWork
     private static int originality=0;
 
     /// <summary>
-    /// �������������
+    /// ?????????????
     /// </summary>
     public static int Complitness
      {
@@ -39,7 +42,7 @@ public static class LabWork
     private static int complitness=0;
 
     /// <summary>
-    /// ������������
+    /// ????????????
     /// </summary>
     public static int Correctness
     {
@@ -53,7 +56,7 @@ public static class LabWork
     private static int correctness=0;
     #endregion
 
-    #region ������� �� ���������� ������
+    #region Stats changed events
     public static event Action<int> OriginalityValueChanged;
     public static event Action<int> ComplitnessValueChanged;
     public static event Action<int> CorrectnessValueChanged;

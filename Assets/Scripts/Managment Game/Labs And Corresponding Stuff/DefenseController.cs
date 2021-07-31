@@ -2,11 +2,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
+
 public class DefenseController : MonoBehaviour
 {
-    private readonly int[] gradeMoney = { 2000, 3000 };
-    private readonly int[] gradeDiffs = { 10, 20, 30 };
-    private int grade;
 
     [SerializeField]
     private GameObject resultsObject;
@@ -17,6 +15,10 @@ public class DefenseController : MonoBehaviour
     [SerializeField]
     private Button resultsButton;
 
+
+    private readonly int[] gradeMoney = { 2000, 3000 }; 
+    private readonly int[] gradeDiffs = { 10, 20, 30 }; 
+    private int grade;
    
     private void Awake()
     {
@@ -28,36 +30,39 @@ public class DefenseController : MonoBehaviour
     {
         Week.DefenseDay -= FinishDefense;
     }
-
+    
+    
    private void FinishDefense()
     {
         CalculateGrade();
 
         resultsButton.onClick.RemoveAllListeners();
+        
+        
+        
         if (grade <= 2)
         {
+            
             resultsButton.onClick.AddListener(CloseApplication);
-            resultsText.text = "� ���� ������ �� �������� 2. �� ���� ���������";
+            resultsText.text = "пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 2. пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
         }
         else
         {
             if (grade >= 4)
             {
                 Player.CurrentMoney += gradeMoney[grade - 4];
-                resultsText.text = $"� ���� ������ �� �������� {grade}. �� �������� {gradeMoney[grade - 4]} ������";
+                resultsText.text = $"пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ {grade}. пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ {gradeMoney[grade - 4]} пїЅпїЅпїЅпїЅпїЅпїЅ";
             }
-            else resultsText.text = "� ���� ������ �� �������� 3";
+            else resultsText.text = "пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 3";
             resultsButton.onClick.AddListener(SetActiveFalse);
         }
         resultsObject.SetActive(true);
     }
 
-    private void SetActiveFalse() => resultsObject.SetActive(false);
-
-    private void CloseApplication() => Application.Quit();
-
     public void CalculateGrade()
     {
+        
+        
         int maxDifference = Mathf.Max(Week.CurrentTeacher.Requirements.Complitness - LabWork.Complitness,
             Week.CurrentTeacher.Requirements.Correctness - LabWork.Correctness,
             Week.CurrentTeacher.Requirements.Originality - LabWork.Originality);
@@ -74,4 +79,8 @@ public class DefenseController : MonoBehaviour
             grade = Mathf.Clamp(grade + 1, 2, 5);
 
     }
+    
+    private void SetActiveFalse() => resultsObject.SetActive(false);
+
+    private void CloseApplication() => Application.Quit();
 }

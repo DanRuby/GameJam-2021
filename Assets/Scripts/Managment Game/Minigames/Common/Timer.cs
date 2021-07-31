@@ -1,20 +1,21 @@
 using UnityEngine;
 
 /// <summary>
-/// ������
+/// ??????
 /// </summary>
 public class Timer 
 {
     private float timer;
     private int secondsLeft = 0;
     private int prevSecondsLeft = 0;
+    
     public static event System.Action TimerRanOut;
     public static event System.Action<int> TimerValueChanged;
 
     public Timer(int seconds) => timer = seconds;
     
     /// <summary>
-    /// ��� ������� 
+    /// ??? ??????? 
     /// </summary>
     public void Tick()
     {
