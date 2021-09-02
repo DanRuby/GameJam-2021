@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using System;
 
 /// <summary>
-/// ��������� ��� ������ ���������� ����������
+/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 /// </summary>
 public class PopUpActivator : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {

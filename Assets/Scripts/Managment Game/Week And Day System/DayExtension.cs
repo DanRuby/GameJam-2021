@@ -5,26 +5,26 @@ public static class DayExtension
         switch(day)
         {
             case Day.Monday:
-                return "Понедельник";
+                return "РџРѕРЅРµРґРµР»СЊРЅРёРє";
             case Day.Tuesday:
-                return "Вторник";
+                return "Р’С‚РѕСЂРЅРёРє";
             case Day.Wednesday:
-                return "Среда";
+                return "РЎСЂРµРґР°";
             case Day.Thursday:
-                return "Четверг";
+                return "Р§РµС‚РІРµСЂРі";
             case Day.Friday:
-                return "Пятница";
+                return "РџСЏС‚РЅРёС†Р°";
             case Day.Saturday:
-                return "Суббота";
+                return "РЎСѓР±Р±РѕС‚Р°";
             case Day.Sunday:
-                return "Воскресенье";
+                return "Р’РѕСЃРєСЂРµСЃРµРЅСЊРµ";
             default:
-                return "Неизвестно";
+                return "РќРµРёР·РІРµСЃС‚РЅРѕ";
         }
     }
 
     /// <summary>
-    /// Подсчет количества дней до события через неделю
+    /// РџРѕРґСЃС‡РµС‚ РєРѕР»РёС‡РµСЃС‚РІР° РґРЅРµР№ РґРѕ СЃРѕР±С‹С‚РёСЏ С‡РµСЂРµР· РЅРµРґРµР»СЋ
     /// </summary>
     public static int DaysBefore(this Day today, Day date) => (int)date < (int)today ? 7 - (today - date) : date - today;
 

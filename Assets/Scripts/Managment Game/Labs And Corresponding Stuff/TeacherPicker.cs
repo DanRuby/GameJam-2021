@@ -3,13 +3,13 @@ using UnityEngine;
 
 
 /// <summary>
-/// Класс для выбора преподавателя на неделю
+/// РљР»Р°СЃСЃ РґР»СЏ РІС‹Р±РѕСЂР° РїСЂРµРїРѕРґР°РІР°С‚РµР»СЏ РЅР° РЅРµРґРµР»СЋ
 /// </summary>
 public class TeacherPicker : MonoBehaviour
 {
 
 
-    [Tooltip("Пулл преподавателей")]
+    [Tooltip("РџСѓР»Р» РїСЂРµРїРѕРґР°РІР°С‚РµР»РµР№")]
     [SerializeField]
     private List<Teacher> teachersPool;
 

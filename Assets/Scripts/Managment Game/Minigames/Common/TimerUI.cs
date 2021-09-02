@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 
 /// <summary>
-/// Класс для показа информации о таймере
+/// РљР»Р°СЃСЃ РґР»СЏ РїРѕРєР°Р·Р° РёРЅС„РѕСЂРјР°С†РёРё Рѕ С‚Р°Р№РјРµСЂРµ
 /// </summary>
 public class TimerUI : MonoBehaviour
 {

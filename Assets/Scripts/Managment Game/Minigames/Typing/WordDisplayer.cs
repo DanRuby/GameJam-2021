@@ -3,7 +3,7 @@ using TMPro;
 using System;
 
 /// <summary>
-/// �����, ��������� ����� �� ������ 
+/// пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ 
 /// </summary>
 public class WordDisplayer : MonoBehaviour
 {
@@ -20,7 +20,7 @@ public class WordDisplayer : MonoBehaviour
     public int LettersLeft => textMesh.text.Length;
 
     /// <summary>
-    /// ��������� ������ �����
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     /// <param name="text"></param>
     public void SetNewText(string text)
@@ -32,7 +32,7 @@ public class WordDisplayer : MonoBehaviour
     public void ChangeColorToActive() => textMesh.color = ACTIVE_COLOR;
 
     /// <summary>
-    /// �������� ������� �� ����������
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     /// <param name="letter"></param>
     public void HandleInput(char letter)

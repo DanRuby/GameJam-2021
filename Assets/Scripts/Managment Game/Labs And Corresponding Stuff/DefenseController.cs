@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine.UI;
 
 
-public class DefenseController : MonoBehaviour
+public class DefenseController: MonoBehaviour
 {
 
     [SerializeField]

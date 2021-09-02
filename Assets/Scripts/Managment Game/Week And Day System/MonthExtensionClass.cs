@@ -5,31 +5,31 @@ public static class MonthExtensionClass
         switch (month)
         {
             case Month.January:
-                return "Январь";
+                return "РЇРЅРІР°СЂСЊ";
             case Month.February:
-                return "Февраль";
+                return "Р¤РµРІСЂР°Р»СЊ";
             case Month.March:
-                return "Март";
+                return "РњР°СЂС‚";
             case Month.April:
-                return "Апрель";
+                return "РђРїСЂРµР»СЊ";
             case Month.May:
-                return "Май";
+                return "РњР°Р№";
             case Month.June:
-                return "Июнь";
+                return "РСЋРЅСЊ";
             case Month.July:
-                return "Июль";
+                return "РСЋР»СЊ";
             case Month.August:
-                return "Август";
+                return "РђРІРіСѓСЃС‚";
             case Month.September:
-                return "Сентябрь";
+                return "РЎРµРЅС‚СЏР±СЂСЊ";
             case Month.October:
-                return "Октябрь";
+                return "РћРєС‚СЏР±СЂСЊ";
             case Month.November:
-                return "Ноябрь";
+                return "РќРѕСЏР±СЂСЊ";
             case Month.December:
-                return "Декабрь";
+                return "Р”РµРєР°Р±СЂСЊ";
             default:
-                return "Неизвестно";
+                return "РќРµРёР·РІРµСЃС‚РЅРѕ";
         }
     }
 }

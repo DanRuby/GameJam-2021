@@ -1,20 +1,20 @@
 using UnityEngine;
 
 /// <summary>
-/// �������� ��������� �������
+/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 /// </summary>
 public class RandomEventsManager : MonoBehaviour
 {
     /// <summary>
-    /// ������ ��������� �������
+    /// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
-    private readonly BaseRandomEvent[] events= {new MaterialAidRandomEvent(), new IllnessRandomEvent() , new HappyDayRandomEvent(), new FoodPoisoningRandomEvent(), 
-                                                    new BreakUpRandomEvent(), new CockRoachesRandomEvent(), new FireTrainingRandomEvent() };
+    [SerializeField]
+    private RandomEvent[] events;
 
     /// <summary>
-    /// ������� �������
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
-    private BaseRandomEvent pickedEvent=null;
+    private RandomEvent pickedEvent=null;
 
     public static event System.Action<int> RandomEventTriggered;
 
@@ -25,7 +25,7 @@ public class RandomEventsManager : MonoBehaviour
 
         for (int i = 0; i < events.Length; i++)
         {
-            BaseRandomEvent randomEvent = events[i];
+            RandomEvent randomEvent = events[i];
             if (randomEvent.CanHappen && probablilty < randomEvent.Probability)
             {
                 pickedEvent = randomEvent;

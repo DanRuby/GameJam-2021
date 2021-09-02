@@ -9,41 +9,41 @@ public class ActivityButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     [SerializeField]
     private int id;
 
-    #region ���� �������
+    #region пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     [Header("Requirements")]
-    [Tooltip("���������� ����� ��������� ������ ��� � ����")]
+    [Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ")]
     [SerializeField]
     private bool oncePerDay;
 
-    [Tooltip("���������� ����� ��������� ������ � �����")]
+    [Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ")]
     [SerializeField]
     private bool weekdayOnly;
 
-    [Tooltip("���������� ������� ��� ����������")]
+    [Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
     [SerializeField]
     private int timeRequired;
 
-    [Tooltip("����������� ����� ��� ���������� ����������")]
+    [Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
     [SerializeField]
     private PlayerStats requiredStats;
 
     [Space(4)]
     [Header("Benefits")]
-    [Tooltip("����������������� ��������� ����� ���������� ����������")]
+    [Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
     [SerializeField]
     private PlayerStats playerBenefits;
 
-    [Tooltip("����������������� ��������� ����� ���������� ����������")]
+    [Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
     [SerializeField]
     private LabStats labBenefits;
 
     [Space(4)]
     [Header("Random Benefits")]
-    [Tooltip("����������������� ��������� ����� ���������� ����������")]
+    [Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
     [SerializeField]
     private LabStats labBenefitsRandom;
 
-    [Tooltip("����������������� ��������� ����� ���������� ����������")]
+    [Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
     [SerializeField]
     private PlayerStats playerBenefitsRandom;
     #endregion
@@ -52,15 +52,15 @@ public class ActivityButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public static event System.Action ActivityPointerExit;
     public static event System.Action<PlayerStats, LabStats> ActivityUsed;
 
-    /// ����, ����������� ����������� �� ���������� � ������� ���
+    /// пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
     private bool activityWasUsed=false;
 
     private Button button;
 
-    PlayerStats actualRequiredStats;
+    private static PlayerStats requiredStatsMultiplier=new PlayerStats(1,1,1);
 
     /// <summary>
-    /// ����� ����������� �������, ����� ������ �������� �� ������ ���� ������
+    /// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     public void HandleEvents()
     {
@@ -73,7 +73,7 @@ public class ActivityButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
             return;
         }
 
-        if (timeRequired <= Week.HoursLeft && actualRequiredStats.CheckRequirements())
+        if (timeRequired <= Week.HoursLeft && (requiredStats*requiredStatsMultiplier).CheckRequirements())
             button.interactable = true;
         else button.interactable = false;
     }
@@ -81,28 +81,23 @@ public class ActivityButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     void Awake()
     {
         button = GetComponent<Button>();
-        actualRequiredStats = requiredStats;
-
-        UpgradeActivator.RecalculateRequiredStats(ref actualRequiredStats);
+       
+        //TODO
+        //UpgradeActivator.RecalculateRequiredStats(ref actualRequiredStats);
 
         Week.DayChanged += HandleDayChanges;
-
-        IllnessRandomEvent.IllnesEventFired+=HandleIllnesActivated;
-        IllnessRandomEvent.IllnesEventEnded+=HandleIllnesDeactivated;
-        FoodPoisoningRandomEvent.FoodPoisoningEventFired+=HandleFoodPoisoningActivated;
-        FoodPoisoningRandomEvent.FoodPoisoningEventEnded+=HandleFoodPoisoningDeactivated;
 
         AddConditions();
         HandleEvents();
     }
 
-    private void HandleIllnesActivated(float multyplier) => actualRequiredStats.Energy += (int)(requiredStats.Energy * multyplier);
-    private void HandleIllnesDeactivated(float multyplier) => actualRequiredStats.Energy -= (int)(requiredStats.Energy * multyplier);
-    private void HandleFoodPoisoningActivated(float multyplier) => actualRequiredStats.Satiety -= (int)(requiredStats.Satiety * multyplier);
-    private void HandleFoodPoisoningDeactivated(float multyplier) => actualRequiredStats.Satiety += (int)(requiredStats.Satiety * multyplier);
+    public static void ChangeRequiredStatsMultiplier(PlayerStats multiplier)
+    {
+        requiredStatsMultiplier += multiplier;
+    }
 
     /// <summary>
-    /// ����� ���������� ������� ��� �������� ���������� ������
+    /// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
     private void AddConditions()
     {
@@ -119,10 +114,6 @@ public class ActivityButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     private void OnDestroy()
     {
         Week.DayChanged -= HandleDayChanges;
-        IllnessRandomEvent.IllnesEventFired -= HandleIllnesActivated;
-        IllnessRandomEvent.IllnesEventEnded -= HandleIllnesDeactivated;
-        FoodPoisoningRandomEvent.FoodPoisoningEventFired -= HandleFoodPoisoningActivated;
-        FoodPoisoningRandomEvent.FoodPoisoningEventEnded -= HandleFoodPoisoningDeactivated;
 
         if (timeRequired > 0)
             Week.HoursLeftChanged -= HandleEvents;
@@ -135,7 +126,7 @@ public class ActivityButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     }
 
     /// <summary>
-    /// ����� ���������� ����������
+    /// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
    public void PerformActivity()
     {
@@ -145,7 +136,7 @@ public class ActivityButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         PlayerStats randomAffectPlayer = playerBenefitsRandom * randomness;
         PlayerStats totalPlayerBenefits = playerBenefits + randomAffectPlayer;
         totalPlayerBenefits = Player.AccountSatietyDebuff(totalPlayerBenefits);
-        Player.ChangeStats(totalPlayerBenefits- actualRequiredStats);
+        Player.ChangeStats(totalPlayerBenefits - (requiredStats*requiredStatsMultiplier) );
 
         LabStats randomAffectLab = labBenefitsRandom * randomness;
         LabStats totalLabAffect = labBenefits + randomAffectLab;
@@ -164,8 +155,8 @@ public class ActivityButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         string requimentString = string.Empty;
         if (timeRequired > 0)
-            requimentString += $"{timeRequired} ����� ";
-        requimentString += actualRequiredStats.GetString();
+            requimentString += $"{timeRequired} пїЅпїЅпїЅпїЅпїЅ ";
+        requimentString += (requiredStats*requiredStatsMultiplier).GetString();
         ActivityHoveredOver?.Invoke(eventData.position, id,requimentString);
     }
 

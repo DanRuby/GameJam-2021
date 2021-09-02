@@ -4,8 +4,8 @@ using System.IO;
 using System.Text;
 
 /// <summary>
-/// ОБертка для считывания массива стрингов 
-/// Юнити не позволяет считывать массивы без него
+/// РћР‘РµСЂС‚РєР° РґР»СЏ СЃС‡РёС‚С‹РІР°РЅРёСЏ РјР°СЃСЃРёРІР° СЃС‚СЂРёРЅРіРѕРІ 
+/// Р®РЅРёС‚Рё РЅРµ РїРѕР·РІРѕР»СЏРµС‚ СЃС‡РёС‚С‹РІР°С‚СЊ РјР°СЃСЃРёРІС‹ Р±РµР· РЅРµРіРѕ
 /// </summary>
 [System.Serializable]
 class Wrapper<T>
@@ -15,34 +15,34 @@ class Wrapper<T>
 
 [RequireComponent(typeof(RectTransform))]
 /// <summary>
-/// Контроллер попапов с общей информацией и активностей
+/// РљРѕРЅС‚СЂРѕР»Р»РµСЂ РїРѕРїР°РїРѕРІ СЃ РѕР±С‰РµР№ РёРЅС„РѕСЂРјР°С†РёРµР№ Рё Р°РєС‚РёРІРЅРѕСЃС‚РµР№
 /// </summary>
 public class InfoPopUpController : MonoBehaviour
 {
-    #region Поля объекта
-    [Header("Активности")]
-    [Tooltip("Геймобджект паенли с информацией активностей")]
+    #region РџРѕР»СЏ РѕР±СЉРµРєС‚Р°
+    [Header("РђРєС‚РёРІРЅРѕСЃС‚Рё")]
+    [Tooltip("Р“РµР№РјРѕР±РґР¶РµРєС‚ РїР°РµРЅР»Рё СЃ РёРЅС„РѕСЂРјР°С†РёРµР№ Р°РєС‚РёРІРЅРѕСЃС‚РµР№")]
     [SerializeField]
     private GameObject activityPopUpGameObject;
 
-    [Tooltip("Меш описания имени")]
+    [Tooltip("РњРµС€ РѕРїРёСЃР°РЅРёСЏ РёРјРµРЅРё")]
     [SerializeField]
     private TextMeshProUGUI activityName;
 
-    [Tooltip("Меш описания активности")]
+    [Tooltip("РњРµС€ РѕРїРёСЃР°РЅРёСЏ Р°РєС‚РёРІРЅРѕСЃС‚Рё")]
     [SerializeField]
     private TextMeshProUGUI description;
 
-    [Tooltip("Меш описания требований")]
+    [Tooltip("РњРµС€ РѕРїРёСЃР°РЅРёСЏ С‚СЂРµР±РѕРІР°РЅРёР№")]
     [SerializeField]
     private TextMeshProUGUI requirments;
 
-    [Header("Информационная панель")]
-    [Tooltip("Геймобджект паенли с информацией")]
+    [Header("РРЅС„РѕСЂРјР°С†РёРѕРЅРЅР°СЏ РїР°РЅРµР»СЊ")]
+    [Tooltip("Р“РµР№РјРѕР±РґР¶РµРєС‚ РїР°РµРЅР»Рё СЃ РёРЅС„РѕСЂРјР°С†РёРµР№")]
     [SerializeField]
     private GameObject popUpGameObject;
 
-    [Tooltip("Текст информационной панели")]
+    [Tooltip("РўРµРєСЃС‚ РёРЅС„РѕСЂРјР°С†РёРѕРЅРЅРѕР№ РїР°РЅРµР»Рё")]
     [SerializeField]
     private TextMeshProUGUI infoPnaelText;
     #endregion
@@ -54,7 +54,7 @@ public class InfoPopUpController : MonoBehaviour
     Wrapper<ActivityData> activitiesInfo;
 
     /// <summary>
-    /// Класс для считывания информации из json активностей
+    /// РљР»Р°СЃСЃ РґР»СЏ СЃС‡РёС‚С‹РІР°РЅРёСЏ РёРЅС„РѕСЂРјР°С†РёРё РёР· json Р°РєС‚РёРІРЅРѕСЃС‚РµР№
     /// </summary>
     [System.Serializable]
     class ActivityData
@@ -100,7 +100,7 @@ public class InfoPopUpController : MonoBehaviour
         PopUpActivator.OnPopUpInfoClose -= HideInfoPopUp;
     }
 
-    #region Попап активностей
+    #region РџРѕРїР°Рї Р°РєС‚РёРІРЅРѕСЃС‚РµР№
     private void ShowActivityInfoPopUp(Vector2 pos,int id,string requirmentsString)
     {
         activityName.text = activitiesInfo.items[id].name;
@@ -116,7 +116,7 @@ public class InfoPopUpController : MonoBehaviour
     }
     #endregion
 
-    #region информационный попап
+    #region РёРЅС„РѕСЂРјР°С†РёРѕРЅРЅС‹Р№ РїРѕРїР°Рї
     private void ShowInfoPopUp(int id,Vector2 pos)
     {
         infoPnaelText.text = infoPanelsMessages.items[id];

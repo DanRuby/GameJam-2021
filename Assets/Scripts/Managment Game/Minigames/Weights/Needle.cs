@@ -7,7 +7,7 @@ public static class MathAddition
 }
 
 /// <summary>
-/// Класс для управления стрелкой прибора
+/// РљР»Р°СЃСЃ РґР»СЏ СѓРїСЂР°РІР»РµРЅРёСЏ СЃС‚СЂРµР»РєРѕР№ РїСЂРёР±РѕСЂР°
 /// </summary>
 public class Needle : MonoBehaviour
 {
@@ -29,7 +29,7 @@ public class Needle : MonoBehaviour
     }
 
     /// <summary>
-    /// Установить новый вес в граммах для показа
+    /// РЈСЃС‚Р°РЅРѕРІРёС‚СЊ РЅРѕРІС‹Р№ РІРµСЃ РІ РіСЂР°РјРјР°С… РґР»СЏ РїРѕРєР°Р·Р°
     /// </summary>
     /// <param name="grams"></param>
     public void SetNewWeight(int grams) => targetAngle = MathAddition.Map(grams, MIN_GRAMMS, MAX_GRAMMS, MIN_ANGLE, MAX_ANGLE);

@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 
 /// <summary>
-/// Класс для вывода информации о проведенном измерении
+/// РљР»Р°СЃСЃ РґР»СЏ РІС‹РІРѕРґР° РёРЅС„РѕСЂРјР°С†РёРё Рѕ РїСЂРѕРІРµРґРµРЅРЅРѕРј РёР·РјРµСЂРµРЅРёРё
 /// </summary>
 public class ResultsCalculator : MonoBehaviour
 {
@@ -25,7 +25,7 @@ public class ResultsCalculator : MonoBehaviour
         LabWork.Complitness = (int)(maxComplitness * result);
         LabWork.Correctness = (int)(maxCorrectness* result);
         LabWork.Originality = (int)(maxOriginality* result);
-        textMesh.text = $"Результат вашей работы:\n Законченность - {LabWork.Complitness}, Правильность - {LabWork.Correctness}, Оригинальность - {LabWork.Originality}";
+        textMesh.text = $"Р РµР·СѓР»СЊС‚Р°С‚ РІР°С€РµР№ СЂР°Р±РѕС‚С‹:\n Р—Р°РєРѕРЅС‡РµРЅРЅРѕСЃС‚СЊ - {LabWork.Complitness}, РџСЂР°РІРёР»СЊРЅРѕСЃС‚СЊ - {LabWork.Correctness}, РћСЂРёРіРёРЅР°Р»СЊРЅРѕСЃС‚СЊ - {LabWork.Originality}";
         gameObject.SetActive(true);
     }
 }

@@ -5,14 +5,14 @@ public static class DepartmentExtension
         switch(department)
         {
             case Department.SAPR:
-                return "ÑÀÏĞ";
+                return "Ğ¡ĞĞŸĞ ";
             case Department.VT:
-                return "ÂÒ";
+                return "Ğ’Ğ¢";
             case Department.Physics:
-                return "Ôèçèêè";
+                return "Ğ¤Ğ¸Ğ·Ğ¸ĞºĞ¸";
             case Department.IS:
-                return "ÈÁ";
-            default: return "Íåèçâåñòíî";
+                return "Ğ˜Ğ‘";
+            default: return "ĞĞµĞ¸Ğ·Ğ²ĞµÑÑ‚Ğ½Ğ¾";
         }
     }
 }
