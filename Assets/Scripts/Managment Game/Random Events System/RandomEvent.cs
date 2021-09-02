@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu()]
 public class RandomEvent : ScriptableObject
 {
-    [SerializeField] private string name;
-    [SerializeField,TextArea(3,5)] private string description;
+    [SerializeField] public string name;
+    [SerializeField,TextArea(3,5)] public string description;
     
     [SerializeField, Range(0.0f,1.0f)] protected float _probability;
     [SerializeField] protected int _cooldown;

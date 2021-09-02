@@ -10,12 +10,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managment Game/GameEventSystem/GameEvent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/RandomEventEffect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managment Game/GameEventSystem/GameEventListener.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/ChangeActivitiesReqStatsMultipliersEffect.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/SetEnergyEffect.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managment Game/Activities/ActivityButton.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -29,24 +35,28 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Minigames/Weights/WeightsManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Player And Activities/UpgradeActivator.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Player And Activities/Player.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/UI/ActivityUsedPopUp.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/UI/RandomEventPopUp.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/UI/TabsButton.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Week And Day System/Week.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/GameEventSystem/GameEvent.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/GameEventSystem/GameEventListener.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/SetEnergyEffect.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/ChangeStatsEffect.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/RandomEventsManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Labs And Corresponding Stuff/DefenseController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/RandomEvent.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/ChangeTimeEffect.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/RandomEventEffect.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/SetActivitiesMultipliersEffect.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Player And Activities/ActivityButton.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/SetActivitiesReqStatsMultipliersEffect.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Player And Activities/PlayerStats.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/ChangeActivitiesReqStatsMultipliersEffect.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Player And Activities/ActivityButton.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Player And Activities/Activity.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/UI/ActivityUsedPopUp.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/RandomEventsManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/RandomEvent.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/UI/RandomEventPopUp.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Activities/Activity.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/UI/InfoPopUpController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Activities/ActivityButton.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1w4fmd5VyTmFWLiiTXybq2C6TKa" />
@@ -108,6 +118,9 @@
       <workItem from="1630506079709" duration="3529000" />
       <workItem from="1630518929919" duration="358000" />
       <workItem from="1630526120155" duration="864000" />
+      <workItem from="1630588085261" duration="883000" />
+      <workItem from="1630603247266" duration="2889000" />
+      <workItem from="1630607901502" duration="1284000" />
     </task>
     <servers />
   </component>

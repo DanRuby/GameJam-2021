@@ -51,26 +51,13 @@ public class InfoPopUpController : MonoBehaviour
     private RectTransform infoPopUpRect;
 
     Wrapper<string> infoPanelsMessages;
-    Wrapper<ActivityData> activitiesInfo;
-
-    /// <summary>
-    /// Класс для считывания информации из json активностей
-    /// </summary>
-    [System.Serializable]
-    class ActivityData
-    {
-        public string name;
-        public string description;
-    }
+    
 
     private void Awake()
     {
         
         string json = File.ReadAllText(Application.dataPath + "/StreamingAssets/InfoPanels.json", Encoding.UTF8);
         infoPanelsMessages = JsonUtility.FromJson<Wrapper<string>>(json);
-
-        json = File.ReadAllText(Application.dataPath + "/StreamingAssets/Activities.json", Encoding.UTF8);
-        activitiesInfo = JsonUtility.FromJson<Wrapper<ActivityData>>(json);
 
         activityPopUpGameObject.SetActive(false);
         popUpGameObject.SetActive(false);
@@ -101,11 +88,11 @@ public class InfoPopUpController : MonoBehaviour
     }
 
     #region Попап активностей
-    private void ShowActivityInfoPopUp(Vector2 pos,int id,string requirmentsString)
+    private void ShowActivityInfoPopUp(Vector2 pos,Activity activity)
     {
-        activityName.text = activitiesInfo.items[id].name;
-        description.text = activitiesInfo.items[id].description;
-        requirments.text = requirmentsString;
+        activityName.text = activity.name;
+        description.text = activity.description;
+        requirments.text = activity.GetRequirmentsString();
         activityPopUpGameObject.transform.position = pos;
         activityPopUpGameObject.SetActive(true);
     }

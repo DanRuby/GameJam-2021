@@ -16,7 +16,7 @@ public class RandomEventsManager : MonoBehaviour
     /// </summary>
     private RandomEvent pickedEvent=null;
 
-    public static event System.Action<int> RandomEventTriggered;
+    public static event System.Action<string,string> RandomEventTriggered;
 
     public void Tick()
     {
@@ -42,7 +42,7 @@ public class RandomEventsManager : MonoBehaviour
         if (pickedEvent != null)
         {
             pickedEvent.Activate();
-            RandomEventTriggered?.Invoke(pickedEventIndex);
+            RandomEventTriggered?.Invoke(pickedEvent.name,pickedEvent.description);
         }
     }
 

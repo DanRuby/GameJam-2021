@@ -14,7 +14,7 @@ public class ActivityUsedPopUp : MonoBehaviour
 
     private void Start()
     {
-        ActivityButton.ActivityUsed += ShowPopUp;
+        Activity.ActivityUsed += ShowPopUp;
         gameObject.SetActive(false);
     }
 
@@ -28,7 +28,7 @@ public class ActivityUsedPopUp : MonoBehaviour
         }
     }
 
-    private void OnDestroy() => ActivityButton.ActivityUsed -= ShowPopUp;
+    private void OnDestroy() => Activity.ActivityUsed -= ShowPopUp;
 
     private void ShowPopUp(PlayerStats playerStats, LabStats labStats)
     {

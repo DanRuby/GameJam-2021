@@ -14,25 +14,8 @@ public class RandomEventPopUp : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI randomEventDescription;
 
-    #region Json
-
-    [System.Serializable]
-    class EventDescriptionArgs
-    {
-        public string name;
-        public string description;
-    }
-
-    Wrapper<EventDescriptionArgs> eventDescriptions;
-    
-
-    #endregion
-
     private void Awake()
     {
-        string json = File.ReadAllText(Application.dataPath + "/StreamingAssets/RandomEvents.json", Encoding.UTF8);
-        eventDescriptions = JsonUtility.FromJson<Wrapper<EventDescriptionArgs>>(json);
-
         RandomEventsManager.RandomEventTriggered += ChangePopUpText;
 
         gameObject.SetActive(false);
@@ -40,10 +23,10 @@ public class RandomEventPopUp : MonoBehaviour
 
     private void OnDestroy() => RandomEventsManager.RandomEventTriggered -= ChangePopUpText;
 
-    private void ChangePopUpText(int index)
+    private void ChangePopUpText(string name, string description)
     {
-        randomEventName.text = eventDescriptions.items[index].name;
-        randomEventDescription.text = eventDescriptions.items[index].description;
+        randomEventName.text = name;
+        randomEventDescription.text = description;
 
         gameObject.SetActive(true);
     }
