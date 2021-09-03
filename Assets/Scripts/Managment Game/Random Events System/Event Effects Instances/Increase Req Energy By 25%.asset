@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a83a7425713cad4fa971ced480f3b59, type: 3}
-  m_Name: Decrease Satiety by 25%
+  m_Name: Increase Req Energy By 25%
   m_EditorClassIdentifier: 
-  satietyMulChange: -0.25
-  energyMulChange: 0
+  satietyMulChange: 0
+  energyMulChange: 0.25
   moneyMulChange: 0

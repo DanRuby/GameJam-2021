@@ -2,13 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 [CreateAssetMenu()]
 public class Activity : ScriptableObject
 {
-    [SerializeField] public string name;
-    [SerializeField] public string description;
+    [SerializeField] public string Name;
+    [SerializeField, TextArea(3,5)] public string description;
     [SerializeField] private bool oneUsePerDay;
     [SerializeField] private bool weekdayOnly;
     [SerializeField] private PlayerStats requirements;
@@ -19,16 +20,19 @@ public class Activity : ScriptableObject
     [SerializeField] private LabStats baseLabBenefits;
     [SerializeField] private LabStats randomLabBenefits;
 
+    public event System.Action<bool> OnActivityStateChanged;
+    public static event System.Action<PlayerStats, LabStats> ActivityUsed;
+    
     private bool canBePerformed;
     private bool wasUsedToday;
     private int numOfBlockingEffects;
-
     private bool isBlocked => numOfBlockingEffects>0;
 
-    private PlayerStats requiredStatsMultiplier; //TODO
 
-    public event System.Action<bool> OnActivityStateChanged;
-    public static event System.Action<PlayerStats, LabStats> ActivityUsed;
+    private static float moneyMul=1.0f;
+    private static float satietyMul=1.0f;
+    private static float energyMul=1.0f;
+
     
     public void PerformActivity()
     {
@@ -38,7 +42,7 @@ public class Activity : ScriptableObject
         PlayerStats randomAffectPlayer = randomBenefits * randomness;
         PlayerStats totalPlayerBenefits = baseBenefits + randomAffectPlayer;
         totalPlayerBenefits = Player.AccountSatietyDebuff(totalPlayerBenefits);
-        Player.ChangeStats(totalPlayerBenefits - (requirements*requiredStatsMultiplier) );
+        Player.ChangeStats(totalPlayerBenefits - AccountMultipliers() );
 
         LabStats randomAffectLab = randomLabBenefits * randomness;
         LabStats totalLabAffect = baseLabBenefits + randomAffectLab;
@@ -51,6 +55,21 @@ public class Activity : ScriptableObject
         ActivityUsed?.Invoke(totalPlayerBenefits, totalLabAffect);
     }
 
+    private PlayerStats AccountMultipliers()
+    {
+        return new PlayerStats(
+            (int)(requirements.Money * moneyMul), 
+            (int)(requirements.Satiety * satietyMul), 
+            (int)(requirements.Energy * energyMul));
+    }
+
+    public static void ChangeMultipliers(float energyMulChange,float moneyMulChange,float satietyMulChange)
+    {
+        energyMul += energyMulChange;
+        satietyMul += satietyMulChange;
+        moneyMul += satietyMulChange;
+    }
+    
     public void RecalculateActivityState()
     {
         if(isBlocked)
@@ -65,7 +84,7 @@ public class Activity : ScriptableObject
             return;
         }
 
-        if (timeRequired <= Week.HoursLeft && (requirements*requiredStatsMultiplier).CheckRequirements())
+        if (timeRequired <= Week.HoursLeft && AccountMultipliers().CheckRequirements())
             OnActivityStateChanged?.Invoke(true);
         else OnActivityStateChanged?.Invoke(false);;
     }
@@ -93,7 +112,7 @@ public class Activity : ScriptableObject
         string requimentString = "";
         if (timeRequired > 0)
             requimentString += $"{timeRequired} часов ";
-        requimentString += (requirements*requiredStatsMultiplier).GetString();
+        requimentString += (AccountMultipliers()).GetString();
         return requimentString;
     }
 

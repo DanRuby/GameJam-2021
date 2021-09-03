@@ -10,21 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3772126a1b6bc9f48907d83ece4ffcb4, type: 3}
-  m_Name: Land A Hand
+  m_Name: Drink Energy Drink
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  oneUsePerDay: 0
+  Name: "\u0412\u044B\u043F\u0438\u0442\u044C \u044D\u043D\u0435\u0440\u0433\u0435\u0442\u0438\u043A"
+  description: "\u0414\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u043E
+    \u0431\u043E\u0434\u0440\u0438\u0442. \u041D\u043E \u0441\u0435\u0440\u0434\u0435\u0447\u043A\u043E
+    \u0431\u043E\u043B\u044C\u0448\u0435 \u043E\u0434\u043D\u043E\u0433\u043E \u0432
+    \u0434\u0435\u043D\u044C \u043D\u0435 \u043F\u043E\u0442\u044F\u043D\u0435\u0442.
+    \u0412\u043E\u0441\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0435\u0442
+    10 \u044D\u043D\u0435\u0440\u0433\u0438\u0438."
+  oneUsePerDay: 1
   weekdayOnly: 0
   requirements:
-    Money: 0
+    Money: 150
     Satiety: 0
     Energy: 0
   timeRequired: 0
   baseBenefits:
     Money: 0
     Satiety: 0
-    Energy: 0
+    Energy: 10
   randomBenefits:
     Money: 0
     Satiety: 0

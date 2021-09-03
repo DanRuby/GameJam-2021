@@ -54,9 +54,10 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/RandomEventsManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/RandomEvent.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/UI/RandomEventPopUp.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Activities/Activity.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/UI/InfoPopUpController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Activities/ActivityButton.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/Event Effects SO/ChangeActivitiesReqStatsMultipliersEffect.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Activities/Activity.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1w4fmd5VyTmFWLiiTXybq2C6TKa" />
@@ -121,6 +122,8 @@
       <workItem from="1630588085261" duration="883000" />
       <workItem from="1630603247266" duration="2889000" />
       <workItem from="1630607901502" duration="1284000" />
+      <workItem from="1630664623382" duration="1900000" />
+      <workItem from="1630694560532" duration="898000" />
     </task>
     <servers />
   </component>

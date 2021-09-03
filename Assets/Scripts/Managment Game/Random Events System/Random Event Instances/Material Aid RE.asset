@@ -24,7 +24,6 @@ MonoBehaviour:
     Money: 2500
     Satiety: 0
     Energy: 0
-  eventEffects:
-  - {fileID: 0}
+  eventEffects: []
   onActivateGameEvents: []
   onDeactivateGameEvents: []

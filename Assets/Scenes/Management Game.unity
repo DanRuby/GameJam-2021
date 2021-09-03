@@ -577,6 +577,10 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
+      propertyPath: activity
+      value: 
+      objectReference: {fileID: 11400000, guid: 6248981f69e646e48bbeeda6876b34a8, type: 2}
+    - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
       propertyPath: oncePerDay
       value: 1
       objectReference: {fileID: 0}
@@ -1024,6 +1028,10 @@ PrefabInstance:
       propertyPath: id
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
+      propertyPath: activity
+      value: 
+      objectReference: {fileID: 11400000, guid: 29ac6146abef391498a20ec10ee0d896, type: 2}
     - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
       propertyPath: timeRequired
       value: 1
@@ -1523,6 +1531,10 @@ PrefabInstance:
       propertyPath: id
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
+      propertyPath: activity
+      value: 
+      objectReference: {fileID: 11400000, guid: b44f6921bd133a646b621df618f81309, type: 2}
     - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
       propertyPath: oncePerDay
       value: 1
@@ -2499,6 +2511,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
+      propertyPath: activity
+      value: 
+      objectReference: {fileID: 11400000, guid: 0fba1398fdd9ae140ae0bc750de48a5f, type: 2}
+    - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
       propertyPath: oncePerDay
       value: 1
       objectReference: {fileID: 0}
@@ -2797,6 +2813,10 @@ PrefabInstance:
       propertyPath: id
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
+      propertyPath: activity
+      value: 
+      objectReference: {fileID: 11400000, guid: 79b78782c61fcd34e82724dd05e55af3, type: 2}
     - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
       propertyPath: timeRequired
       value: 2
@@ -3981,6 +4001,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
+      propertyPath: activity
+      value: 
+      objectReference: {fileID: 11400000, guid: be4c60bd47818214283672aa428cc3f0, type: 2}
+    - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
       propertyPath: oncePerDay
       value: 1
       objectReference: {fileID: 0}
@@ -4372,6 +4396,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
+      propertyPath: activity
+      value: 
+      objectReference: {fileID: 11400000, guid: e64536da26dcb5b459648a70d747ec36, type: 2}
+    - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
       propertyPath: timeRequired
       value: 1
       objectReference: {fileID: 0}
@@ -4745,6 +4773,10 @@ PrefabInstance:
       propertyPath: id
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
+      propertyPath: activity
+      value: 
+      objectReference: {fileID: 11400000, guid: 646ad29d2e399e6459fdb4b37a15687a, type: 2}
     - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
       propertyPath: oncePerDay
       value: 1
@@ -6038,6 +6070,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
+      propertyPath: activity
+      value: 
+      objectReference: {fileID: 11400000, guid: a33b914e26626ab4ba8335b1566965fe, type: 2}
+    - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
       propertyPath: oncePerDay
       value: 1
       objectReference: {fileID: 0}
@@ -6889,6 +6925,10 @@ PrefabInstance:
       propertyPath: id
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
+      propertyPath: activity
+      value: 
+      objectReference: {fileID: 11400000, guid: 9dd3b73b175485545a11b20b283f163e, type: 2}
     - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
       propertyPath: timeRequired
       value: 6
@@ -7851,6 +7891,10 @@ PrefabInstance:
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
+      propertyPath: activity
+      value: 
+      objectReference: {fileID: 11400000, guid: bf403c2752d472b42ac959ecda264fb8, type: 2}
+    - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
       propertyPath: oncePerDay
       value: 1
       objectReference: {fileID: 0}
@@ -8052,6 +8096,10 @@ PrefabInstance:
       propertyPath: id
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
+      propertyPath: activity
+      value: 
+      objectReference: {fileID: 11400000, guid: 3832d2ab74602b5478545e7bfd6749ba, type: 2}
     - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
       propertyPath: oncePerDay
       value: 1
@@ -8854,6 +8902,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
+      propertyPath: activity
+      value: 
+      objectReference: {fileID: 11400000, guid: cf3cd3efefa1d544f9a663f297e27cdb, type: 2}
+    - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
       propertyPath: benefits
       value: 
       objectReference: {fileID: 0}
@@ -9209,6 +9261,10 @@ PrefabInstance:
       propertyPath: id
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
+      propertyPath: activity
+      value: 
+      objectReference: {fileID: 11400000, guid: 1f2c224a4ed3ee1438bba576865fa69b, type: 2}
     - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
       propertyPath: oncePerDay
       value: 1
@@ -10599,6 +10655,10 @@ PrefabInstance:
       propertyPath: id
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
+      propertyPath: activity
+      value: 
+      objectReference: {fileID: 11400000, guid: 64d83f23f496aae4b913935bc8c5e410, type: 2}
     - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
       propertyPath: benefits
       value: 
@@ -12154,6 +12214,10 @@ PrefabInstance:
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
+      propertyPath: activity
+      value: 
+      objectReference: {fileID: 11400000, guid: ba38756125185334184b8423751bbd99, type: 2}
+    - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
       propertyPath: oncePerDay
       value: 1
       objectReference: {fileID: 0}
@@ -12804,6 +12868,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1037087816}
     m_Modifications:
+    - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
+      propertyPath: activity
+      value: 
+      objectReference: {fileID: 11400000, guid: 24defcaaa3cb45049a59f542cda485af, type: 2}
     - target: {fileID: 148286588, guid: 9c4fc21a7d05a6249bfb3a156262ebe4, type: 3}
       propertyPath: benefits
       value: 

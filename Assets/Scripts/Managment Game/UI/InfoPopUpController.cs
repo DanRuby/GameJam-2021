@@ -90,7 +90,7 @@ public class InfoPopUpController : MonoBehaviour
     #region Попап активностей
     private void ShowActivityInfoPopUp(Vector2 pos,Activity activity)
     {
-        activityName.text = activity.name;
+        activityName.text = activity.Name;
         description.text = activity.description;
         requirments.text = activity.GetRequirmentsString();
         activityPopUpGameObject.transform.position = pos;

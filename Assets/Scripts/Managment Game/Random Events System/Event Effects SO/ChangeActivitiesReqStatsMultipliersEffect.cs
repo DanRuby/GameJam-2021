@@ -2,19 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//TODO
 [CreateAssetMenu()]
 public class ChangeActivitiesReqStatsMultipliersEffect : RandomEventEffect
 {
-    [SerializeField] private PlayerStats multipliers;
+    [SerializeField] private float satietyMulChange;
+    [SerializeField] private float energyMulChange;
+    [SerializeField] private float moneyMulChange;
     
     public override void Activate()
     {
-        ActivityButton.ChangeRequiredStatsMultiplier(multipliers);
+        Activity.ChangeMultipliers(energyMulChange,moneyMulChange,satietyMulChange);
     }
     
     public override void Deactivate()
     {
-        ActivityButton.ChangeRequiredStatsMultiplier(-multipliers);
+        Activity.ChangeMultipliers(-energyMulChange,-moneyMulChange,-satietyMulChange);
     }
 }

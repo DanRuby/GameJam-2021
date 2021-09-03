@@ -13,8 +13,6 @@ public class  ActivityButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     private Button button;
 
-    private static PlayerStats requiredStatsMultiplier=new PlayerStats(1,1,1);
-
     /// <summary>
     /// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>
@@ -38,11 +36,7 @@ public class  ActivityButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
         AddConditions();
         RecalculateActivityState();
     }
-
-    public static void ChangeRequiredStatsMultiplier(PlayerStats multiplier)
-    {
-        requiredStatsMultiplier += multiplier;
-    }
+    
 
     /// <summary>
     /// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ

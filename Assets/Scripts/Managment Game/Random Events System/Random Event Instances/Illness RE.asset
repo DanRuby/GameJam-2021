@@ -28,6 +28,6 @@ MonoBehaviour:
     Satiety: 0
     Energy: 0
   eventEffects:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: d63a895f37d88814ab344d9f1b900de0, type: 2}
   onActivateGameEvents: []
   onDeactivateGameEvents: []
