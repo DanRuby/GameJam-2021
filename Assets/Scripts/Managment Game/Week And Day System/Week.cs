@@ -26,8 +26,8 @@ public class Week : MonoBehaviour
 {
     #region пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private const int HOURS_PER_DAY = 24;
-    private  int MAX_ENERGY_REFILL = 35;
-    private  int HOURS_TO_ENERGY_MULTIPLIER = 5;
+    public static int MAX_ENERGY_REFILL = 35;
+    public static int HOURS_TO_ENERGY_MULTIPLIER = 5;
 
     public const Day NEW_LAB_DAY = Day.Monday;
     public const Day LAB_DEFENCE_DAY = Day.Saturday;
@@ -147,12 +147,6 @@ public class Week : MonoBehaviour
 
     private void CalculateSleepEnergy()
     {
-        if (UpgradeActivator.ActiveUpgrades[(int) Upgrade.Matrace])
-        {
-            MAX_ENERGY_REFILL = 50;
-            HOURS_TO_ENERGY_MULTIPLIER = 7;
-        }
-
         Player.CurrentEnergy += Mathf.Min(MAX_ENERGY_REFILL, HoursLeft * HOURS_TO_ENERGY_MULTIPLIER);
     }
 }

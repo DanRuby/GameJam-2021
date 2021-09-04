@@ -29,10 +29,12 @@ public class Activity : ScriptableObject
     private bool isBlocked => numOfBlockingEffects>0;
 
 
+    private static float reqMoneyMul=1.0f;
+    private static float reqSatietyMul=1.0f;
+    private static float reqEnergyMul=1.0f;
     private static float moneyMul=1.0f;
     private static float satietyMul=1.0f;
     private static float energyMul=1.0f;
-
     
     public void PerformActivity()
     {
@@ -41,8 +43,9 @@ public class Activity : ScriptableObject
         float randomness = Random.value;
         PlayerStats randomAffectPlayer = randomBenefits * randomness;
         PlayerStats totalPlayerBenefits = baseBenefits + randomAffectPlayer;
-        totalPlayerBenefits = Player.AccountSatietyDebuff(totalPlayerBenefits);
-        Player.ChangeStats(totalPlayerBenefits - AccountMultipliers() );
+        CalculateBenefitsWithMuls(ref totalPlayerBenefits);
+       
+        Player.ChangeStats(totalPlayerBenefits - CalculateRequirmentsWithMuls());
 
         LabStats randomAffectLab = randomLabBenefits * randomness;
         LabStats totalLabAffect = baseLabBenefits + randomAffectLab;
@@ -55,15 +58,30 @@ public class Activity : ScriptableObject
         ActivityUsed?.Invoke(totalPlayerBenefits, totalLabAffect);
     }
 
-    private PlayerStats AccountMultipliers()
+    private PlayerStats CalculateRequirmentsWithMuls()
     {
         return new PlayerStats(
-            (int)(requirements.Money * moneyMul), 
-            (int)(requirements.Satiety * satietyMul), 
-            (int)(requirements.Energy * energyMul));
+            (int)(requirements.Money * reqMoneyMul), 
+            (int)(requirements.Satiety * reqSatietyMul), 
+            (int)(requirements.Energy * reqEnergyMul));
     }
 
-    public static void ChangeMultipliers(float energyMulChange,float moneyMulChange,float satietyMulChange)
+    private void CalculateBenefitsWithMuls(ref PlayerStats benefits)
+    {
+        benefits.Energy = (int)(benefits.Energy * energyMul);
+        benefits.Money = (int)(benefits.Money * moneyMul);
+        benefits.Satiety = (int)(benefits.Satiety * satietyMul);
+    }
+    
+
+    public static void ChangeRequirmentsMultipliers(float energyMulChange,float moneyMulChange,float satietyMulChange)
+    {
+        reqEnergyMul += energyMulChange;
+        reqSatietyMul += satietyMulChange;
+        reqMoneyMul += satietyMulChange;
+    }
+    
+    public static void ChangeBenefitsMultipliers(float energyMulChange,float moneyMulChange,float satietyMulChange)
     {
         energyMul += energyMulChange;
         satietyMul += satietyMulChange;
@@ -84,7 +102,7 @@ public class Activity : ScriptableObject
             return;
         }
 
-        if (timeRequired <= Week.HoursLeft && AccountMultipliers().CheckRequirements())
+        if (timeRequired <= Week.HoursLeft && CalculateRequirmentsWithMuls().CheckRequirements())
             OnActivityStateChanged?.Invoke(true);
         else OnActivityStateChanged?.Invoke(false);;
     }
@@ -112,7 +130,7 @@ public class Activity : ScriptableObject
         string requimentString = "";
         if (timeRequired > 0)
             requimentString += $"{timeRequired} часов ";
-        requimentString += (AccountMultipliers()).GetString();
+        requimentString += (CalculateRequirmentsWithMuls()).GetString();
         return requimentString;
     }
 

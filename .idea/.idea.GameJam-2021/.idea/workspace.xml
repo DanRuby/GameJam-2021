@@ -19,9 +19,13 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/Upgrade.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managment Game/GameEventSystem/GameEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/ChangeSleepParams.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managment Game/GameEventSystem/GameEventListener.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/ChangePlayerMaxParams.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managment Game/Activities/ActivityButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/ChangeActivityMulUpgrade.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -33,10 +37,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Minigames/Common/Timer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Minigames/Typing/WordsMinigame.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Minigames/Weights/WeightsManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Player And Activities/UpgradeActivator.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Player And Activities/Player.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/UI/TabsButton.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Week And Day System/Week.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/GameEventSystem/GameEvent.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/GameEventSystem/GameEventListener.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/SetEnergyEffect.cs" />
@@ -55,9 +56,17 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/RandomEvent.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/UI/RandomEventPopUp.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/UI/InfoPopUpController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Activities/ActivityButton.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/Event Effects SO/ChangeActivitiesReqStatsMultipliersEffect.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Activities/Activity.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Activities/ActivityButton.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Player And Activities/UpgradeActivator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Player And Activities/Player.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/Upgrade.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/ChangeActivityMulUpgrade.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/ChangePlayerMaxParams.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/ChangeSleepParams.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Week And Day System/Week.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/UpgradeActivator.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1w4fmd5VyTmFWLiiTXybq2C6TKa" />
@@ -124,6 +133,7 @@
       <workItem from="1630607901502" duration="1284000" />
       <workItem from="1630664623382" duration="1900000" />
       <workItem from="1630694560532" duration="898000" />
+      <workItem from="1630769210503" duration="2708000" />
     </task>
     <servers />
   </component>

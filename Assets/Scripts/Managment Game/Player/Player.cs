@@ -7,7 +7,7 @@ public static class Player
 {
     /*пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ*/
     private const int START_MONEY = 1500;
-    private const int DEBUFF_SATIETY_MULTYPLIER=2;
+    private const float DEBUFF_SATIETY_MULTYPLIER=.5f;
 
     #region пїЅпїЅпїЅпїЅпїЅ
 
@@ -38,8 +38,14 @@ public static class Player
         {
             if (currentSatiety != value)
             {
+                int prevSatiety = currentSatiety;
                 currentSatiety = Math.Min(Math.Max(value,0),maxSatiety);
                 SatietyValueChanged?.Invoke();
+                
+                if (currentSatiety < DebuffSatietyValue && prevSatiety>=DebuffSatietyValue)
+                    Activity.ChangeBenefitsMultipliers(-DEBUFF_SATIETY_MULTYPLIER,0,0);
+                else if(currentSatiety >= DebuffSatietyValue && prevSatiety<DebuffSatietyValue)
+                    Activity.ChangeBenefitsMultipliers(DEBUFF_SATIETY_MULTYPLIER,0,0);
             }
         }
     }
@@ -113,12 +119,5 @@ public static class Player
         CurrentEnergy += change.Energy;
         CurrentMoney += change.Money;
         CurrentSatiety += change.Satiety;
-    }
-
-    public static PlayerStats AccountSatietyDebuff(PlayerStats initial)
-    {
-        if (CurrentSatiety < DebuffSatietyValue)
-            initial.Energy /= DEBUFF_SATIETY_MULTYPLIER;
-        return initial;
     }
 }

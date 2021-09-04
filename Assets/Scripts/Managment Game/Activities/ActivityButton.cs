@@ -13,13 +13,6 @@ public class  ActivityButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     private Button button;
 
-    /// <summary>
-    /// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
-    /// </summary>
-    public void RecalculateActivityState()
-    {
-        activity.RecalculateActivityState();
-    }
 
     void Awake()
     {
@@ -29,15 +22,21 @@ public class  ActivityButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
         {
             button.interactable = val;
         };
-        
-        //TODO
-        //UpgradeActivator.RecalculateRequiredStats(ref actualRequiredStats);
-        
+
         AddConditions();
         RecalculateActivityState();
     }
     
 
+    /// <summary>
+    /// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+    /// </summary>
+    public void RecalculateActivityState()
+    {
+        activity.RecalculateActivityState();
+    }
+    
+    
     /// <summary>
     /// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     /// </summary>

@@ -11,11 +11,11 @@ public class ChangeActivitiesReqStatsMultipliersEffect : RandomEventEffect
     
     public override void Activate()
     {
-        Activity.ChangeMultipliers(energyMulChange,moneyMulChange,satietyMulChange);
+        Activity.ChangeRequirmentsMultipliers(energyMulChange,moneyMulChange,satietyMulChange);
     }
     
     public override void Deactivate()
     {
-        Activity.ChangeMultipliers(-energyMulChange,-moneyMulChange,-satietyMulChange);
+        Activity.ChangeRequirmentsMultipliers(-energyMulChange,-moneyMulChange,-satietyMulChange);
     }
 }
