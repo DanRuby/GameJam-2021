@@ -67,6 +67,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/ChangeSleepParams.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Week And Day System/Week.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/UpgradeActivator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Week And Day System/GameCycleHandler.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1w4fmd5VyTmFWLiiTXybq2C6TKa" />
@@ -134,6 +135,7 @@
       <workItem from="1630664623382" duration="1900000" />
       <workItem from="1630694560532" duration="898000" />
       <workItem from="1630769210503" duration="2708000" />
+      <workItem from="1631303315551" duration="422000" />
     </task>
     <servers />
   </component>
