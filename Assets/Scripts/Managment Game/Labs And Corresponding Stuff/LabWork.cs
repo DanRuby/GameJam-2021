@@ -6,16 +6,13 @@ public enum Department
 }
 
 /// <summary>
-/// ????? ???????????? ??????
+/// Class that represents current lab that player is working on and will defend
 /// </summary>
 public static class LabWork
 {
     #region Stats
     public const int MAX_STATS_VALUE=100;
-
-    /// <summary>
-    /// ??????????????
-    /// </summary>
+    
     public static int Originality
     {
         get => originality;
@@ -26,10 +23,7 @@ public static class LabWork
         }
     }
     private static int originality=0;
-
-    /// <summary>
-    /// ?????????????
-    /// </summary>
+    
     public static int Complitness
      {
         get => complitness;
@@ -40,10 +34,7 @@ public static class LabWork
 }
     }
     private static int complitness=0;
-
-    /// <summary>
-    /// ????????????
-    /// </summary>
+    
     public static int Correctness
     {
         get => correctness;

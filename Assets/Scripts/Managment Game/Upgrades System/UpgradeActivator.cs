@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Класс получения апгрейдов 
+/// Button with which player buys new upgrades  
 /// </summary>
 [RequireComponent(typeof(Button))]
 public class UpgradeActivator : MonoBehaviour

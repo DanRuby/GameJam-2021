@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Кнопка для открытия подменю активностей и улучшений
+/// Tab button for switching activity/upgrade tabs
 /// </summary>
 public class TabsButton : MonoBehaviour
 {

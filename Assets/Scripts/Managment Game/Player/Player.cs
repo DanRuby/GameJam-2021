@@ -1,19 +1,15 @@
 using System;
 
 /// <summary>
-/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+/// Class that stores player`s stats 
 /// </summary>
 public static class Player 
 {
-    /*пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ*/
     private const int START_MONEY = 1500;
     private const float DEBUFF_SATIETY_MULTYPLIER=.5f;
 
-    #region пїЅпїЅпїЅпїЅпїЅ
-
-    /// <summary>
-    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
-    /// </summary>
+    #region �����
+    
     public static int CurrentMoney 
     {
         get => currentMoney;
@@ -27,10 +23,7 @@ public static class Player
         }
     }
     private static int currentMoney=START_MONEY;
-
-    /// <summary>
-    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
-    /// </summary>
+    
     public static int CurrentSatiety 
     {
         get => currentSatiety;
@@ -42,6 +35,7 @@ public static class Player
                 currentSatiety = Math.Min(Math.Max(value,0),maxSatiety);
                 SatietyValueChanged?.Invoke();
                 
+                //Account debuff from small satiety levels
                 if (currentSatiety < DebuffSatietyValue && prevSatiety>=DebuffSatietyValue)
                     Activity.ChangeBenefitsMultipliers(-DEBUFF_SATIETY_MULTYPLIER,0,0);
                 else if(currentSatiety >= DebuffSatietyValue && prevSatiety<DebuffSatietyValue)
@@ -50,10 +44,7 @@ public static class Player
         }
     }
     private static int currentSatiety=50;
-
-    /// <summary>
-    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
-    /// </summary>
+    
     public static int CurrentEnergy
     {
         get => currentEnergy;
@@ -67,10 +58,7 @@ public static class Player
         }
     }
     private static int currentEnergy = 50;
-
-    /// <summary>
-    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
-    /// </summary>
+    
     public static int MaxSatiety
     { 
         get => maxSatiety;
@@ -84,15 +72,9 @@ public static class Player
         }
     }
     private static int maxSatiety = 100;
-
-    /// <summary>
-    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
-    /// </summary>
+    
     public const int DebuffSatietyValue=30;
-
-    /// <summary>
-    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
-    /// </summary>
+    
     public static int MaxEnergy
     {
         get => maxEnergy;
@@ -108,7 +90,7 @@ public static class Player
     private static int maxEnergy = 100;
     #endregion
 
-    #region пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+    #region StatsChangedEvents
     public static event Action MoneyValueChanged;
     public static event Action SatietyValueChanged;
     public static event Action EnergyValueChanged;

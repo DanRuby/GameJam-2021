@@ -1,32 +1,23 @@
 using UnityEngine;
 
-/// <summary>
-/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
-/// </summary>
 public class RandomEventsManager : MonoBehaviour
 {
-    /// <summary>
-    /// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
-    /// </summary>
-    [SerializeField]
-    private RandomEvent[] events;
-
-    /// <summary>
-    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
-    /// </summary>
-    private RandomEvent pickedEvent=null;
+    [SerializeField] private RandomEvent[] events;
+    
+    private RandomEvent pickedEvent=null;// Current random event that is active
 
     public static event System.Action<string,string> RandomEventTriggered;
 
     public void Tick()
     {
         int pickedEventIndex = 0;
-        float probablilty = Random.value;
+        float probability = Random.value;
 
+        //pick first available event that is not on cooldown and has higher probability that the one we got
         for (int i = 0; i < events.Length; i++)
         {
             RandomEvent randomEvent = events[i];
-            if (randomEvent.CanHappen && probablilty < randomEvent.Probability)
+            if (randomEvent.CanOccur && probability < randomEvent.Probability)
             {
                 pickedEvent = randomEvent;
                 pickedEventIndex = i;
@@ -42,7 +33,7 @@ public class RandomEventsManager : MonoBehaviour
         if (pickedEvent != null)
         {
             pickedEvent.Activate();
-            RandomEventTriggered?.Invoke(pickedEvent.name,pickedEvent.description);
+            RandomEventTriggered?.Invoke(pickedEvent.Name,pickedEvent.Description);
         }
     }
 

@@ -3,48 +3,48 @@ using TMPro;
 using UnityEngine.UI;
 
 /// <summary>
-/// РљР»Р°СЃСЃ СѓРїСЂР°РІР»РµРЅРёСЏ РёРЅС‚РµСЂС„РµР№СЃРѕРј РІ РіР»Р°РІРЅРѕР№ СЃС†РµРЅРµ
+/// Controller teacher and lab fields in UI
 /// </summary>
 public class UIController : MonoBehaviour
 {
 
 
-    [Tooltip("РЎСЃС‹Р»РєРё РЅР° РїР°РЅРµР»СЊ РїСЂРµРїРѕРґР°")]
+    [Tooltip("Ссылки на панель препода")]
     [SerializeField]
     private GameObject teacherPanel;
 
- #region РўРµРєСЃС‚РѕРІС‹Рµ РїРѕР»СЏ
+ #region Текстовые поля
     
 
-    [Header("РџРѕР»СЏ СЃС‚Р°С‚РѕРІ Р»Р°Р±С‹")]
-    [Tooltip("РњРµС€ РґР»СЏ РІС‹РІРѕРґР° РѕСЂРёРіРёРЅР°Р»СЊРЅРѕСЃС‚Рё")]
+    [Header("Поля статов лабы")]
+    [Tooltip("Меш для вывода оригинальности")]
     [SerializeField]
     private TextMeshProUGUI originalityTMP;
 
-    [Tooltip("РњРµС€ РґР»СЏ РІС‹РІРѕРґР° Р·Р°РІРµСЂС€РµРЅРЅРѕСЃС‚Рё")]
+    [Tooltip("Меш для вывода завершенности")]
     [SerializeField]
     private TextMeshProUGUI complitnessTMP;
 
-    [Tooltip("РњРµС€ РґР»СЏ РІС‹РІРѕРґР° РїСЂР°Р°РІРёР»СЊРЅРѕСЃС‚Рё")]
+    [Tooltip("Меш для вывода праавильности")]
     [SerializeField]
     private TextMeshProUGUI correctnessTMP;
 
-    [Header("РџРѕР»СЏ РІС‹РІРѕРґР° РїСЂРµРїРѕРґР°РІР°С‚РµР»СЏ")]
+    [Header("Поля вывода преподавателя")]
     [SerializeField]
     private TextMeshProUGUI FIOTMP;
 
     [SerializeField]
     private TextMeshProUGUI departmentTMP;
 
-    [Tooltip("РњРµС€ РґР»СЏ РІС‹РІРѕРґР° РѕСЂРёРіРёРЅР°Р»СЊРЅРѕСЃС‚Рё")]
+    [Tooltip("Меш для вывода оригинальности")]
     [SerializeField]
     private TextMeshProUGUI tOriginalityTMP;
 
-    [Tooltip("РњРµС€ РґР»СЏ РІС‹РІРѕРґР° Р·Р°РІРµСЂС€РµРЅРЅРѕСЃС‚Рё")]
+    [Tooltip("Меш для вывода завершенности")]
     [SerializeField]
     private TextMeshProUGUI tComplitnessTMP;
 
-    [Tooltip("РњРµС€ РґР»СЏ РІС‹РІРѕРґР° РїСЂР°Р°РІРёР»СЊРЅРѕСЃС‚Рё")]
+    [Tooltip("Меш для вывода праавильности")]
     [SerializeField]
     private TextMeshProUGUI tCorrectnessTMP;
 
@@ -52,7 +52,7 @@ public class UIController : MonoBehaviour
     private Image tImage;
     #endregion
 
-    #region РћР±СЂР°Р±РѕС‚РєР° СЃРѕР±С‹С‚РёР№
+    #region Обработка событий
 
     private void ChangeOriginalityText(int newVal) => originalityTMP.text = $"{newVal}/{LabWork.MAX_STATS_VALUE}";
 
@@ -63,7 +63,7 @@ public class UIController : MonoBehaviour
 
 
     /// <summary>
-    /// РћС‚РїРёСЃРєР° РѕС‚ СЃРѕР±С‹С‚РёР№ РёРіСЂС‹
+    /// Отписка от событий игры
     /// </summary>
     private void UnsubscribeFromEvents()
     {
@@ -77,7 +77,7 @@ public class UIController : MonoBehaviour
     }
 
     /// <summary>
-    /// РџРѕРґРїРёСЃРєР° РЅР° СЃРѕР±С‹С‚РёСЏ РёРіСЂС‹
+    /// Подписка на события игры
     /// </summary>
     private void SubscribeToEvents()
     {

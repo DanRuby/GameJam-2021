@@ -1,65 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu()]
 public class RandomEvent : ScriptableObject
 {
-    [SerializeField] public string name;
-    [SerializeField,TextArea(3,5)] public string description;
+    [SerializeField] public string Name;
+    [SerializeField,TextArea(3,5)] public string Description;
     
-    [SerializeField, Range(0.0f,1.0f)] protected float _probability;
-    [SerializeField] protected int _cooldown;
+    [Tooltip("Odds of event occuring. Bigger the number, bigger the odds")]
+    [SerializeField, Range(0.0f,1.0f)] private float probability;
+    [SerializeField] private int cooldown;
 
     [SerializeField] private PlayerStats changeStats;
-    
     [SerializeField] private RandomEventEffect[] eventEffects;
 
     [SerializeField] private GameEvent[] onActivateGameEvents;
     [SerializeField] private GameEvent[] onDeactivateGameEvents;
     
-    protected int _daysBeforeActive;
+    private int daysBeforeActive;
     
-    /// <summary>
-    /// Может ли событие произойти
-    /// </summary>
-    public bool CanHappen => _daysBeforeActive <= 0;
-
-    /// <summary>
-    /// Количество дней через которое событие опять может произойти
-    /// </summary>
-    public int CoolDown { get => _cooldown; }
-
-    /// <summary>
-    /// Шанс активации случайного события
-    /// </summary>
-    public float Probability { get => _probability; }
-
-    /// <summary>
-    /// Активировать случайное событие
-    /// </summary>
-    public virtual void Activate()
+    public bool CanOccur => daysBeforeActive <= 0;
+    public float Probability => probability;
+    
+    public void Activate()
     {
-        _daysBeforeActive = _cooldown;
+        daysBeforeActive = cooldown;
         Player.ChangeStats(changeStats);
         
         foreach (var effect in eventEffects)
         {
             effect.Activate();
         }
-        
-        
+
         foreach (var gameEvent in onActivateGameEvents)
         {
             gameEvent.Raise();
         }
     }
-        
-
-    /// <summary>
-    /// Деактивироовать случайно событие
-    /// </summary>
-    public virtual void Deactivate() {
+    
+    public void Deactivate() {
         foreach (var effect in eventEffects)
         {
             effect.Deactivate();
@@ -70,9 +51,6 @@ public class RandomEvent : ScriptableObject
             gameEvent.Raise();
         }
     }
-
-    /// <summary>
-    /// Ежедневное обновление события
-    /// </summary>
-    public virtual void Tick() => _daysBeforeActive--;
+    
+    public void Tick() => daysBeforeActive--;
 }

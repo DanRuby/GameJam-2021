@@ -3,7 +3,7 @@ using System;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+/// ������ ����
 /// </summary>
 public enum Month
 {
@@ -16,32 +16,23 @@ public enum Day
     Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Unknown
 }
 
+/// <summary>
+///In game week representations
+/// </summary>
 [RequireComponent(typeof(RandomEventsManager))]
 [RequireComponent(typeof(AudioSource))]
-[RequireComponent(typeof(TeacherPicker))]
-/// <summary>
-/// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
-/// </summary>
+[RequireComponent(typeof(TeachersPool))]
 public class Week : MonoBehaviour
 {
-    #region пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private const int HOURS_PER_DAY = 24;
     public static int MAX_ENERGY_REFILL = 35;
     public static int HOURS_TO_ENERGY_MULTIPLIER = 5;
 
     public const Day NEW_LAB_DAY = Day.Monday;
     public const Day LAB_DEFENCE_DAY = Day.Saturday;
-
-
-    /// <summary>
-    /// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
-    /// </summary>
     public static readonly int[] DaysInMonth = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-    #endregion
 
-    /// <summary>
-    /// пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
-    /// </summary>
+    
     public static int CurrentDayDate
     {
         get => currentDayDate;
@@ -63,15 +54,9 @@ public class Week : MonoBehaviour
         }
     }
     private static int currentDayDate = 1;
-
-    /// <summary>
-    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
-    /// </summary>
+    
     public static Day currentDay = Day.Sunday;
-
-    /// <summary>
-    /// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ
-    /// </summary>
+    
     public static int HoursLeft
     {
         get => hoursLeft;
@@ -85,10 +70,7 @@ public class Week : MonoBehaviour
         }
     }
     private static int hoursLeft = HOURS_PER_DAY;
-
-    /// <summary>
-    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
-    /// </summary>
+    
     public static Month currentMonth = Month.September;
 
     public static event Action DefenseDay;
@@ -98,26 +80,24 @@ public class Week : MonoBehaviour
     public static event Action HoursLeftChanged;
     public static event Action DayChanged;
 
-    private TeacherPicker teacherPicker;
+    private TeachersPool teachersPool;
     private RandomEventsManager eventsManager;
     private AudioSource audioSource;
 
     void Awake()
     {
-        SceneSwitcher.DayFinished += GoToNextDay;
+        SceneSwitcher.DayFinished += ChangeToNextDay;
 
         eventsManager = GetComponent<RandomEventsManager>();
-        teacherPicker = GetComponent<TeacherPicker>();
+        teachersPool = GetComponent<TeachersPool>();
         audioSource = GetComponent<AudioSource>();
         DayChanged?.Invoke();
     }
 
-    private void OnDestroy() => SceneSwitcher.DayFinished -= GoToNextDay;
+    private void OnDestroy() => SceneSwitcher.DayFinished -= ChangeToNextDay;
 
-    /// <summary>
-    /// РњРµС‚РѕРґ РґР»СЏ РїРµСЂРµС…РѕРґР° РІ СЃР»РµРґСѓСЋС‰РёР№ РґРµРЅСЊ
-    /// </summary>
-    public void GoToNextDay()
+
+    public void ChangeToNextDay()
     {
         CurrentDayDate++;
         DayChanged?.Invoke();
@@ -130,7 +110,7 @@ public class Week : MonoBehaviour
         eventsManager.DeactivateCurrentEvent();
         if (currentDay == NEW_LAB_DAY)
         {
-            CurrentTeacher = teacherPicker.PickNewTeacher();
+            CurrentTeacher = teachersPool.PickNewTeacher();
             if (CurrentTeacher != null)
             {
                 audioSource.clip = CurrentTeacher.audio;

@@ -3,12 +3,11 @@ using UnityEngine.EventSystems;
 using System;
 
 /// <summary>
-/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+/// ACtivator for UI popups with additional info
 /// </summary>
 public class PopUpActivator : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField]
-    private int id; 
+    [SerializeField] private int id; 
 
     public static event Action<int,Vector2> OnPopUpInfoShow;
     public static event Action OnPopUpInfoClose;

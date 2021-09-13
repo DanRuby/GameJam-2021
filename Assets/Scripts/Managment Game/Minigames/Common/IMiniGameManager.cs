@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+/// Base class for minigame managers
 /// </summary>
 public class MiniGameManager : MonoBehaviour
 {

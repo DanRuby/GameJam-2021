@@ -7,19 +7,19 @@ public static class MathAddition
 }
 
 /// <summary>
-/// Класс для управления стрелкой прибора
+/// Class that changes needle angle based on picked weight
 /// </summary>
 public class Needle : MonoBehaviour
 {
-    [SerializeField] 
-    private Transform needleRotationPoint;
+    [SerializeField] private Transform needleRotationPoint;
 
+    //This parameters are set based on a weights model
     private const int MAX_GRAMMS = 5000;
     private const int MIN_GRAMMS = 0;
     private const int MAX_ANGLE = 0;
     private const int MIN_ANGLE = 360;
 
-    private float targetAngle=0;
+    private float targetAngle=0;//angle that needle should point at
     private float currentAngle=0;
 
     void Update()
@@ -29,7 +29,7 @@ public class Needle : MonoBehaviour
     }
 
     /// <summary>
-    /// Установить новый вес в граммах для показа
+    /// Set new weight for display
     /// </summary>
     /// <param name="grams"></param>
     public void SetNewWeight(int grams) => targetAngle = MathAddition.Map(grams, MIN_GRAMMS, MAX_GRAMMS, MIN_ANGLE, MAX_ANGLE);

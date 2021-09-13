@@ -4,20 +4,16 @@ using System.Text;
 using TMPro;
 
 /// <summary>
-/// Попап случайного события
+/// Random evnt popup
 /// </summary>
 public class RandomEventPopUp : MonoBehaviour
 {
-    [SerializeField]
-    private TextMeshProUGUI randomEventName;
-
-    [SerializeField]
-    private TextMeshProUGUI randomEventDescription;
+    [SerializeField] private TextMeshProUGUI randomEventName;
+    [SerializeField] private TextMeshProUGUI randomEventDescription;
 
     private void Awake()
     {
         RandomEventsManager.RandomEventTriggered += ChangePopUpText;
-
         gameObject.SetActive(false);
     }
 

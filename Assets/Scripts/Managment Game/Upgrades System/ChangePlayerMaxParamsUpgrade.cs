@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu()]
-public class ChangePlayerMaxParams : Upgrade
+public class ChangePlayerMaxParamsUpgrade : Upgrade
 {
     [SerializeField] private int energy;
     [SerializeField] private int satiety;

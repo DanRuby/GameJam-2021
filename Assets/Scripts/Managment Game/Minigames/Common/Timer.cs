@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// ??????
+/// Plane timer class
 /// </summary>
 public class Timer 
 {
@@ -15,8 +15,7 @@ public class Timer
     public Timer(int seconds) => timer = seconds;
     
     /// <summary>
-    /// ??? ??????? 
-    /// </summary>
+    /// Update method. Should be called in some kind of game loop.</summary>
     public void Tick()
     {
         timer -= Time.deltaTime;

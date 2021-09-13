@@ -2,13 +2,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// РњРёРЅРёРёРіСЂР° РЅР° РЅР°РїРµС‡Р°С‚С‹РІР°РЅРёРµ СЃР»РѕРІ
+/// Typing Minigame
 /// </summary>
-public class WordsMinigame : MiniGameManager
+public class TypingMinigame : MiniGameManager
 {
-    [SerializeField]
-    [Tooltip("РџСЂРµС„Р°Р± РґР»СЏ СЃРїР°СѓРЅР°")]
-    private WordDisplayer wordPrefab;
+    [Tooltip("Word prefab")]
+    [SerializeField] private Word wordPrefab;
 
     private string[] wordTextsPool = { "int","bool","string", "float", "double", "short", "byte", "MonoBehaviour", "UnityEngine", "using", "Input", "Update", "Start", "Awake", "delegate", "Action", "event",
     "Func", "Predicate", "ToString", "public", "private", "protected", "void", "deltaTime", "fixedDeltaTime", "GetAxis", "interface", "Button", "GameObject", "Transform", "Vector3", "glDrawElements",
@@ -22,32 +21,32 @@ public class WordsMinigame : MiniGameManager
     private int score=0;
     private const int ScorePerWord=100;
 
-    private GenericPool<WordDisplayer> wordsPool;
+    private GenericPool<Word> wordsPool;
     private const int initialPool = 10;
-    private WordDisplayer activeInputWord;
-    private List<WordDisplayer> spawnedWords;
+    private Word activeInputWord;
+    private List<Word> spawnedWords;
 
     private const float timeBetweenSpawns = 2f;
     private float timer=0;
 
     private void Awake()
     {
-        spawnedWords = new List<WordDisplayer>();
-        wordsPool = new GenericPool<WordDisplayer>(initialPool, wordPrefab);
+        spawnedWords = new List<Word>();
+        wordsPool = new GenericPool<Word>(initialPool, wordPrefab);
 
         maxNumOfWords = Random.Range((int)(wordTextsPool.Length*.75f),wordTextsPool.Length);
         maxScore = maxNumOfWords * ScorePerWord;
 
-        WordDisplayer.WordDestroyed += OnWordDestroyed;
+        Word.WordDestroyed += OnWordDestroyed;
     }
-    private void OnDestroy() => WordDisplayer.WordDestroyed -= OnWordDestroyed;
+    private void OnDestroy() => Word.WordDestroyed -= OnWordDestroyed;
 
-    //РЎРѕР·РґР°С‚СЊ РЅРѕРІРѕРµ СЃР»РѕРІРѕ
+    //Create new word
     private void SpawnNewWord()
     {
         numOfWordsSpawned++;
         string text=wordTextsPool[Random.Range(0, wordTextsPool.Length)];
-        WordDisplayer newWord=wordsPool.GetObject();
+        Word newWord=wordsPool.GetObject();
         
         newWord.SetNewText(text);
         newWord.transform.SetParent(transform);
@@ -75,7 +74,7 @@ public class WordsMinigame : MiniGameManager
     
     private void HandleKeyboardInput()
     {
-        // РџРµСЂРµРґР°РІР°С‚СЊ РІРІРµРґРµРЅРЅСѓСЋ СЃС‚СЂРѕРєСѓ Р°РєС‚РёРІРЅРѕРјСѓ СЃР»РѕРІСѓ
+        // transfer all input to active word
         foreach (char letter in Input.inputString)
         {
             if (activeInputWord)
@@ -84,15 +83,15 @@ public class WordsMinigame : MiniGameManager
     }
 
     /// <summary>
-    /// РҐРµРЅРґР»РёРЅРі СѓРЅРёС‡С‚РѕР¶РµРЅРёСЏ СЃР»РѕРІР°
+    /// Handles word destruction
     /// </summary>
-    /// <param name="wordDisplayer"></param>
-    private void OnWordDestroyed(WordDisplayer wordDisplayer)
+    /// <param name="word"></param>
+    private void OnWordDestroyed(Word word)
     {
-        wordDisplayer.gameObject.SetActive(false);
-        spawnedWords.Remove(wordDisplayer);
+        word.gameObject.SetActive(false);
+        spawnedWords.Remove(word);
         
-        //Р•СЃР»Рё РЅР° СЌРєСЂР°РЅРµ РµСЃС‚СЊ СЃР»РѕРІР°, С‚Рѕ РІС‹Р±СЂСЏС‚СЊ РЅР°РёР±РѕР»РµРµ СЃС‚Р°СЂРѕРµ Р°РєС‚РёРІРЅС‹Рј
+        //if where are words on screen, pick furthest one as an active one
         if (spawnedWords.Count != 0)
         {
             activeInputWord = spawnedWords[0];
@@ -100,11 +99,11 @@ public class WordsMinigame : MiniGameManager
         }
         else activeInputWord = null;
 
-        if (wordDisplayer.LettersLeft == 0)
+        if (word.LettersLeft == 0)
             score += ScorePerWord;
-        wordsPool.ReturnObject(wordDisplayer);
+        wordsPool.ReturnObject(word);
 
-        //Р•СЃР»Рё СѓРЅРёС‡С‚РѕР¶РµРЅРЅРѕРµ СЃР»РѕРІРѕ Р±С‹Р»Рѕ РїРѕСЃР»РµРґРЅРёРј РґР»СЏ СЃРїР°СѓРЅР°, С‚Рѕ Р·Р°РІРµСЂС€РёС‚СЊ РёРіСЂСѓ
+        //if destroyed word wal the last one, end minigame
         if (numOfWordsSpawned == maxNumOfWords && spawnedWords.Count == 0)
             MiniGameEnded?.Invoke((float)score/maxScore);
     }

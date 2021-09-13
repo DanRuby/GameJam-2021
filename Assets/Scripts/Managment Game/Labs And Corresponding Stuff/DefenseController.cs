@@ -2,20 +2,16 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-
+/// <summary>
+/// Controller of lab defenses
+/// Stops the game if player has bad results and gives money with good results
+/// </summary>
 public class DefenseController: MonoBehaviour
 {
-
-    [SerializeField]
-    private GameObject resultsObject;
-
-    [SerializeField]
-    private TextMeshProUGUI resultsText;
-
-    [SerializeField]
-    private Button resultsButton;
-
-
+    [SerializeField] private GameObject resultsObject;
+    [SerializeField] private TextMeshProUGUI resultsText;
+    [SerializeField] private Button resultsButton;
+    
     private readonly int[] gradeMoney = { 2000, 3000 }; 
     private readonly int[] gradeDiffs = { 10, 20, 30 }; 
     private int grade;
@@ -37,23 +33,20 @@ public class DefenseController: MonoBehaviour
         CalculateGrade();
 
         resultsButton.onClick.RemoveAllListeners();
-        
-        
-        
+
         if (grade <= 2)
         {
-            
             resultsButton.onClick.AddListener(CloseApplication);
-            resultsText.text = "пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 2. пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
+            resultsText.text = "По результатам защиты ва получи 2. Вы были отчислены";
         }
         else
         {
             if (grade >= 4)
             {
                 Player.CurrentMoney += gradeMoney[grade - 4];
-                resultsText.text = $"пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ {grade}. пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ {gradeMoney[grade - 4]} пїЅпїЅпїЅпїЅпїЅпїЅ";
+                resultsText.text = $"По результатам защиты вы получили {grade}. За хорошие успехи вы получили {gradeMoney[grade - 4]}";
             }
-            else resultsText.text = "пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 3";
+            else resultsText.text = "По результатам защиты вы получили 3";
             resultsButton.onClick.AddListener(SetActiveFalse);
         }
         resultsObject.SetActive(true);
@@ -61,8 +54,6 @@ public class DefenseController: MonoBehaviour
 
     public void CalculateGrade()
     {
-        
-        
         int maxDifference = Mathf.Max(Week.CurrentTeacher.Requirements.Complitness - LabWork.Complitness,
             Week.CurrentTeacher.Requirements.Correctness - LabWork.Correctness,
             Week.CurrentTeacher.Requirements.Originality - LabWork.Originality);

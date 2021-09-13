@@ -2,12 +2,11 @@ using UnityEngine;
 using TMPro;
 
 /// <summary>
-/// Класс для показа информации о таймере
+/// Class that controls timer interface
 /// </summary>
 public class TimerUI : MonoBehaviour
 {
-    [SerializeField]
-    private TextMeshProUGUI textMesh;
+    [SerializeField] private TextMeshProUGUI textMesh;
 
     private void Awake() => Timer.TimerValueChanged += ChangeText;
 

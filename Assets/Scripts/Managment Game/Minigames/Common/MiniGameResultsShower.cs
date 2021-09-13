@@ -2,9 +2,9 @@ using UnityEngine;
 using TMPro;
 
 /// <summary>
-/// РљР»Р°СЃСЃ РґР»СЏ РІС‹РІРѕРґР° РёРЅС„РѕСЂРјР°С†РёРё Рѕ РїСЂРѕРІРµРґРµРЅРЅРѕРј РёР·РјРµСЂРµРЅРёРё
+/// Class that shows player`s results in a minigame
 /// </summary>
-public class ResultsCalculator : MonoBehaviour
+public class MiniGameResultsShower : MonoBehaviour
 {
     private int maxComplitness = 15;
     private int maxCorrectness = 15;
@@ -25,7 +25,7 @@ public class ResultsCalculator : MonoBehaviour
         LabWork.Complitness = (int)(maxComplitness * result);
         LabWork.Correctness = (int)(maxCorrectness* result);
         LabWork.Originality = (int)(maxOriginality* result);
-        textMesh.text = $"Р РµР·СѓР»СЊС‚Р°С‚ РІР°С€РµР№ СЂР°Р±РѕС‚С‹:\n Р—Р°РєРѕРЅС‡РµРЅРЅРѕСЃС‚СЊ - {LabWork.Complitness}, РџСЂР°РІРёР»СЊРЅРѕСЃС‚СЊ - {LabWork.Correctness}, РћСЂРёРіРёРЅР°Р»СЊРЅРѕСЃС‚СЊ - {LabWork.Originality}";
+        textMesh.text = $"Результат вашей работы:\n Законченность - {LabWork.Complitness}, Правильность - {LabWork.Correctness}, Оригинальность - {LabWork.Originality}";
         gameObject.SetActive(true);
     }
 }

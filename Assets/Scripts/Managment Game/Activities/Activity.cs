@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
+/// <summary>
+/// Class that represents activity that player can perform to gain something out of them
+/// </summary>
 [CreateAssetMenu()]
 public class Activity : ScriptableObject
 {
@@ -129,7 +132,7 @@ public class Activity : ScriptableObject
     {
         string requimentString = "";
         if (timeRequired > 0)
-            requimentString += $"{timeRequired} С‡Р°СЃРѕРІ ";
+            requimentString += $"{timeRequired} часов ";
         requimentString += (CalculateRequirmentsWithMuls()).GetString();
         return requimentString;
     }

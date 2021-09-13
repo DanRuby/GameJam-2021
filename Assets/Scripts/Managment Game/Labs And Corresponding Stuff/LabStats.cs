@@ -1,5 +1,5 @@
 /// <summary>
-/// РЎС‚СЂСѓРєС‚СѓСЂР°, С…СЂР°РЅСЏС‰Р°СЏ СЃС‚Р°С‚С‹ Р»Р°Р±РѕСЂР°С‚РѕСЂРЅРѕР№
+/// Structure that stores lab parameters
 /// </summary>
 [System.Serializable]
 public struct LabStats
@@ -27,11 +27,11 @@ public struct LabStats
     {
         string res = string.Empty;
         if (Originality != 0)
-            res += $"{Originality} РѕСЂРёРіРёРЅР°Р»СЊРЅРѕСЃС‚Рё ";
+            res += $"{Originality} оригинальности ";
         if (Complitness != 0)
-            res += $"{Complitness} Р·Р°РІРµСЂС€РµРЅРЅРѕСЃС‚Рё ";
+            res += $"{Complitness} завершенности ";
         if (Correctness != 0)
-            res += $"{Correctness} РїСЂР°РІРёР»СЊРЅРѕСЃС‚Рё";
+            res += $"{Correctness} правильности";
         return res;
     }
 }

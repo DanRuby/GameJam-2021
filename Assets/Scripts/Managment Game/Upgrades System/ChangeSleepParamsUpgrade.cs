@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu()]
-public class ChangeSleepParams : Upgrade
+public class ChangeSleepParamsUpgrade : Upgrade
 {
     [SerializeField] private int hourToEnergyMul;
     [SerializeField] private int energyRefill;

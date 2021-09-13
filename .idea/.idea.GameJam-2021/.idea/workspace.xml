@@ -21,53 +21,65 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/Upgrade.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managment Game/GameEventSystem/GameEvent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/ChangeSleepParams.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/ChangeSleepParamsUpgrade.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managment Game/GameEventSystem/GameEventListener.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/ChangePlayerMaxParams.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/ChangePlayerMaxParamsUpgrade.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managment Game/Activities/ActivityButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/ChangeActivityMulUpgrade.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/DontDestroy.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/SceneSwitcher.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Labs And Corresponding Stuff/LabStats.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Labs And Corresponding Stuff/LabWork.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Labs And Corresponding Stuff/Teacher.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Minigames/Common/Timer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Minigames/Typing/WordsMinigame.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Minigames/Weights/WeightsManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/UI/TabsButton.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/GameEventSystem/GameEvent.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/GameEventSystem/GameEventListener.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/SetEnergyEffect.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/ChangeStatsEffect.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Labs And Corresponding Stuff/DefenseController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/ChangeTimeEffect.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/RandomEventEffect.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/SetActivitiesMultipliersEffect.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/SetActivitiesReqStatsMultipliersEffect.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Player And Activities/PlayerStats.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/ChangeActivitiesReqStatsMultipliersEffect.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Player And Activities/ActivityButton.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Player And Activities/Activity.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/UI/ActivityUsedPopUp.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/RandomEventsManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/RandomEvent.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/UI/RandomEventPopUp.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/UI/InfoPopUpController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/Event Effects SO/ChangeActivitiesReqStatsMultipliersEffect.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Activities/Activity.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Activities/ActivityButton.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Player And Activities/UpgradeActivator.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Player And Activities/Player.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/Upgrade.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/ChangeActivityMulUpgrade.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/ChangePlayerMaxParams.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/ChangeSleepParams.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Activities/Activity.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Activities/ActivityButton.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/GameEventSystem/GameEvent.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/GameEventSystem/GameEventListener.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Labs And Corresponding Stuff/DefenseController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Labs And Corresponding Stuff/LabStats.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Labs And Corresponding Stuff/LabWork.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Labs And Corresponding Stuff/Teacher.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Labs And Corresponding Stuff/TeacherPicker.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Labs And Corresponding Stuff/TeachersPool.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Minigames/Common/GenericPool.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Minigames/Common/IMiniGameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Minigames/Common/MiniGameResultsShower.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Minigames/Common/Timer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Minigames/Common/TimerUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Minigames/Typing/WordDisplayer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Minigames/Typing/WordsMinigame.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Minigames/Typing/TypingMinigame.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Minigames/Typing/Word.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Minigames/Weights/Needle.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Minigames/Weights/WeightsMiniGame.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Player/Player.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Player/PlayerStats.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/Event Effects SO/ChangeActivitiesReqStatsMultipliersEffect.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/Event Effects SO/ChangeTimeEffect.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/Event Effects SO/RandomEventEffect.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/RandomEvent.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Random Events System/RandomEventsManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DontDestroy.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EndGame.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SceneSwitcher.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Week And Day System/DayExtension.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Week And Day System/GameCycleHandler.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Week And Day System/Week.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/UpgradeActivator.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Week And Day System/GameCycleHandler.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/Upgrade.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/ChangeSleepParamsUpgrade.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/Upgrades System/ChangePlayerMaxParamsUpgrade.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/UI/ActivityUsedPopUp.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/UI/InfoPopUpController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/UI/MainFieldsUIController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/UI/PopUpActivator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/UI/RandomEventPopUp.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/UI/TabsButton.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managment Game/UI/UIController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1w4fmd5VyTmFWLiiTXybq2C6TKa" />
@@ -136,6 +148,7 @@
       <workItem from="1630694560532" duration="898000" />
       <workItem from="1630769210503" duration="2708000" />
       <workItem from="1631303315551" duration="422000" />
+      <workItem from="1631542693660" duration="5385000" />
     </task>
     <servers />
   </component>

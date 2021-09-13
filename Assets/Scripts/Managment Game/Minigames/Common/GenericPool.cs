@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Пул игровых объектов
+/// Pool of game objects
 /// </summary>
 /// <typeparam name="T"></typeparam>
 public class GenericPool<T> where T : MonoBehaviour

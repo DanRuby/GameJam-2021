@@ -1,39 +1,33 @@
 using UnityEngine;
 
 /// <summary>
-/// Основная информация о преподавателе
+/// Class that stores teacher parameters and data
 /// </summary>
 [CreateAssetMenu(fileName = "Teacher", menuName = "Scriptable Object/Teacher")]
 public class Teacher : ScriptableObject
 {
     /// <summary>
-    /// ФИО
+    /// Name string
     /// </summary>
     public string FIO;
-
-    /// <summary>
-    /// Кафедра
-    /// </summary>
+    
     public Department Department;
 
     /// <summary>
-    /// Требования
+    /// Lab requirements to get at least a 3 on defense 
     /// </summary>
     public LabStats Requirements;
-
-    /// <summary>
-    /// Фотография
-    /// </summary>
+    
     public Sprite Photo;
 
     /// <summary>
-    /// Название сцены с миниигрой
+    /// Minigame scene
     /// </summary>
     public string SceneName;
 
     
     [Range(0,1)]
-    [Tooltip(("Шанс преподавателя повысить оценку. Чем ближе к 1, тем больше шанс."))]
+    [Tooltip(("Chance of increasing player`s mark. Bigger the number, bigger the chance"))]
     public float Loyality;
 
     public AudioClip audio;

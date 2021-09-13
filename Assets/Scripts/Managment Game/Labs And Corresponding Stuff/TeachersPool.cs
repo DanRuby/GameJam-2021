@@ -3,16 +3,16 @@ using UnityEngine;
 
 
 /// <summary>
-/// Класс для выбора преподавателя на неделю
+/// Class that stores a pool of teachers
 /// </summary>
-public class TeacherPicker : MonoBehaviour
-{
+public class TeachersPool : MonoBehaviour
+{ 
+    [SerializeField] private List<Teacher> teachersPool;
 
-
-    [Tooltip("Пулл преподавателей")]
-    [SerializeField]
-    private List<Teacher> teachersPool;
-
+    /// <summary>
+    /// Gets a random teacher from the pool
+    /// </summary>
+    /// <returns></returns>
     public Teacher PickNewTeacher()
    {
         int index = Random.Range(0, teachersPool.Count - 1);

@@ -1,5 +1,5 @@
 /// <summary>
-/// Структура, хранящая статы игрока
+/// Structure that represents player`s stats
 /// </summary>
 [System.Serializable]
 public struct PlayerStats
@@ -38,11 +38,11 @@ public struct PlayerStats
     {
         string res = string.Empty;
         if (Money != 0)
-            res += $"{Money} рублей ";
+            res += $"{Money} ������ ";
         if (Satiety != 0)
-            res += $"{Satiety} сытости ";
+            res += $"{Satiety} ������� ";
         if (Energy != 0)
-            res += $"{Energy} энергии";
+            res += $"{Energy} �������";
         return res;
     }
 }
